@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" viewBox="0 0 680 446" role="img"><title>The Phantasm parameter map</title><desc>Parameters are numbered by decade: 1x wave and sequence, 2x oscillators, 3x LFO, mod wheel and pressure, 4x the filter envelope ENV2, 5x the amp envelope ENV1, 6x voice modes, 7x filter and amp, 8x the mod envelope ENV3, 9x actions and instrument settings. The three envelopes share the same second digits: 0 attack, 1 peak, 2 decay, 3 sustain, 4 release.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}.t{font-size:14px;font-weight:400;fill:#2C2C2A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}.ts{font-size:12px;font-weight:400;fill:#5F5E5A}.tx{font-size:11px;font-weight:400;fill:#5F5E5A}.tn{font-size:10px;font-weight:500;fill:#888780}.tc{font-size:10.5px;font-weight:400;fill:#5F5E5A}.rule{stroke:#B4B2A9}.leader{stroke:#888780;stroke-width:1;stroke-dasharray:3 3;fill:none}.arr{stroke:#5F5E5A;stroke-width:1.5;fill:none}.wave{stroke:#534AB7;stroke-width:1.5;fill:none;stroke-linejoin:round}.axis{stroke:#D3D1C7;stroke-width:.5}.hot{fill:none;stroke:#993C1D;stroke-width:2}.c-purple>rect,rect.c-purple{fill:#EEEDFE;stroke:#534AB7}.c-purple>.t,.c-purple>.th{fill:#3C3489}.c-purple>.ts,.c-purple>.tx,.c-purple>.tc{fill:#3C3489}.c-teal>rect,rect.c-teal{fill:#E1F5EE;stroke:#0F6E56}.c-teal>.t,.c-teal>.th{fill:#085041}.c-teal>.ts,.c-teal>.tx,.c-teal>.tc{fill:#085041}.c-coral>rect,rect.c-coral{fill:#FAECE7;stroke:#993C1D}.c-coral>.t,.c-coral>.th{fill:#712B13}.c-coral>.ts,.c-coral>.tx,.c-coral>.tc{fill:#712B13}.c-gray>rect,rect.c-gray{fill:#F1EFE8;stroke:#5F5E5A}.c-gray>.t,.c-gray>.th{fill:#444441}.c-gray>.ts,.c-gray>.tx,.c-gray>.tc{fill:#5F5E5A}.c-amber>rect,rect.c-amber{fill:#FAEEDA;stroke:#854F0B}.c-amber>.t,.c-amber>.th{fill:#633806}.c-amber>.ts,.c-amber>.tx,.c-amber>.tc{fill:#633806}.c-empty>rect,rect.c-empty{fill:none;stroke:#D3D1C7;stroke-dasharray:3 3}.c-empty>.tn{fill:#B4B2A9}@media (prefers-color-scheme:dark){.t,.th{fill:#F1EFE8}.ts,.tx{fill:#B4B2A9}.tn{fill:#888780}.rule{stroke:#5F5E5A}.arr{stroke:#B4B2A9}.wave{stroke:#AFA9EC}.axis{stroke:#444441}.hot{stroke:#F0997B}.c-purple>rect,rect.c-purple{fill:#3C3489;stroke:#AFA9EC}.c-purple>.t,.c-purple>.th{fill:#CECBF6}.c-purple>.ts,.c-purple>.tx{fill:#AFA9EC}.c-purple>.tc{fill:#CECBF6}.c-teal>rect,rect.c-teal{fill:#085041;stroke:#5DCAA5}.c-teal>.t,.c-teal>.th{fill:#9FE1CB}.c-teal>.ts,.c-teal>.tx{fill:#5DCAA5}.c-teal>.tc{fill:#9FE1CB}.c-coral>rect,rect.c-coral{fill:#712B13;stroke:#F0997B}.c-coral>.t,.c-coral>.th{fill:#F5C4B3}.c-coral>.ts,.c-coral>.tx{fill:#F0997B}.c-coral>.tc{fill:#F5C4B3}.c-gray>rect,rect.c-gray{fill:#444441;stroke:#B4B2A9}.c-gray>.t,.c-gray>.th{fill:#D3D1C7}.c-gray>.ts,.c-gray>.tx,.c-gray>.tc{fill:#D3D1C7}.c-amber>rect,rect.c-amber{fill:#633806;stroke:#EF9F27}.c-amber>.t,.c-amber>.th{fill:#FAC775}.c-amber>.ts,.c-amber>.tx{fill:#EF9F27}.c-amber>.tc{fill:#FAC775}.c-empty>rect,rect.c-empty{stroke:#5F5E5A}.c-empty>.tn{fill:#5F5E5A}}</style>
+<text class="th" x="20" y="30">The parameter map: first digit is the section, second the control</text>
+<text class="ts" x="20" y="48">PARAM and two digits picks one. The three envelopes share x0-x4: attack, peak, decay, sustain, release.</text>
+<text class="tn" x="135.5" y="64" text-anchor="middle">x0</text>
+<text class="tn" x="192.5" y="64" text-anchor="middle">x1</text>
+<text class="tn" x="249.5" y="64" text-anchor="middle">x2</text>
+<text class="tn" x="306.5" y="64" text-anchor="middle">x3</text>
+<text class="tn" x="363.5" y="64" text-anchor="middle">x4</text>
+<text class="tn" x="420.5" y="64" text-anchor="middle">x5</text>
+<text class="tn" x="477.5" y="64" text-anchor="middle">x6</text>
+<text class="tn" x="534.5" y="64" text-anchor="middle">x7</text>
+<text class="tn" x="591.5" y="64" text-anchor="middle">x8</text>
+<text class="tn" x="648.5" y="64" text-anchor="middle">x9</text>
+<text class="th" x="20" y="85">1x</text>
+<text class="tx" x="20" y="99">Wave</text>
+<g class="c-purple"><rect x="109" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="83">10</text><text class="tc" x="136.5" y="97" text-anchor="middle">Table</text></g>
+<g class="c-purple"><rect x="166" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="83">11</text><text class="tc" x="193.5" y="97" text-anchor="middle">Seq.</text></g>
+<g class="c-purple"><rect x="223" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="83">12</text><text class="tc" x="250.5" y="97" text-anchor="middle">Position</text></g>
+<g class="c-purple"><rect x="280" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="83">13</text><text class="tc" x="307.5" y="97" text-anchor="middle">Wrap</text></g>
+<g class="c-purple"><rect x="337" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="83">14</text><text class="tc" x="364.5" y="97" text-anchor="middle">Vel.</text></g>
+<g class="c-purple"><rect x="394" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="398" y="83">15</text><text class="tc" x="421.5" y="97" text-anchor="middle">Key</text></g>
+<g class="c-empty"><rect x="451" y="71" width="55" height="32" rx="3"/><text class="tn" x="478.5" y="90" text-anchor="middle">16</text></g>
+<g class="c-purple"><rect x="508" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="83">17</text><text class="tc" x="535.5" y="97" text-anchor="middle">LFO</text></g>
+<g class="c-purple"><rect x="565" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="569" y="83">18</text><text class="tc" x="592.5" y="97" text-anchor="middle">Seq. mode</text></g>
+<g class="c-purple"><rect x="622" y="71" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="626" y="83">19</text><text class="tc" x="649.5" y="97" text-anchor="middle">Reset gap</text></g>
+<text class="th" x="20" y="119">2x</text>
+<text class="tx" x="20" y="133">Oscillators</text>
+<g class="c-purple"><rect x="109" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="117">20</text><text class="tc" x="136.5" y="131" text-anchor="middle">Coarse A</text></g>
+<g class="c-purple"><rect x="166" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="117">21</text><text class="tc" x="193.5" y="131" text-anchor="middle">Fine A</text></g>
+<g class="c-purple"><rect x="223" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="117">22</text><text class="tc" x="250.5" y="131" text-anchor="middle">Coarse B</text></g>
+<g class="c-purple"><rect x="280" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="117">23</text><text class="tc" x="307.5" y="131" text-anchor="middle">Fine B</text></g>
+<g class="c-purple"><rect x="337" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="117">24</text><text class="tc" x="364.5" y="131" text-anchor="middle">B level</text></g>
+<g class="c-purple"><rect x="394" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="398" y="117">25</text><text class="tc" x="421.5" y="131" text-anchor="middle">Bend</text></g>
+<g class="c-purple"><rect x="451" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="455" y="117">26</text><text class="tc" x="478.5" y="131" text-anchor="middle">Vintage</text></g>
+<g class="c-purple"><rect x="508" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="117">27</text><text class="tc" x="535.5" y="131" text-anchor="middle">A level</text></g>
+<g class="c-purple"><rect x="565" y="105" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="569" y="117">28</text><text class="tc" x="592.5" y="131" text-anchor="middle">B source</text></g>
+<g class="c-empty"><rect x="622" y="105" width="55" height="32" rx="3"/><text class="tn" x="649.5" y="124" text-anchor="middle">29</text></g>
+<text class="th" x="20" y="153">3x</text>
+<text class="tx" x="20" y="167">LFO, wheel</text>
+<g class="c-amber"><rect x="109" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="151">30</text><text class="tc" x="136.5" y="165" text-anchor="middle">Rate</text></g>
+<g class="c-amber"><rect x="166" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="151">31</text><text class="tc" x="193.5" y="165" text-anchor="middle">&gt; pitch</text></g>
+<g class="c-amber"><rect x="223" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="151">32</text><text class="tc" x="250.5" y="165" text-anchor="middle">Shape</text></g>
+<g class="c-amber"><rect x="280" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="151">33</text><text class="tc" x="307.5" y="165" text-anchor="middle">Sync</text></g>
+<g class="c-amber"><rect x="337" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="151">34</text><text class="tc" x="364.5" y="165" text-anchor="middle">&gt; cutoff</text></g>
+<g class="c-amber"><rect x="394" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="398" y="151">35</text><text class="tc" x="421.5" y="165" text-anchor="middle">Delay</text></g>
+<g class="c-amber"><rect x="451" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="455" y="151">36</text><text class="tc" x="478.5" y="165" text-anchor="middle">Wheel</text></g>
+<g class="c-amber"><rect x="508" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="151">37</text><text class="tc" x="535.5" y="165" text-anchor="middle">Pressure</text></g>
+<g class="c-amber"><rect x="565" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="569" y="151">38</text><text class="tc" x="592.5" y="165" text-anchor="middle">Wheel to</text></g>
+<g class="c-amber"><rect x="622" y="139" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="626" y="151">39</text><text class="tc" x="649.5" y="165" text-anchor="middle">Press. to</text></g>
+<text class="th" x="20" y="187">4x</text>
+<text class="tx" x="20" y="201">ENV2 filter</text>
+<g class="c-coral"><rect x="109" y="173" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="185">40</text><text class="tc" x="136.5" y="199" text-anchor="middle">Attack</text></g>
+<g class="c-coral"><rect x="166" y="173" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="185">41</text><text class="tc" x="193.5" y="199" text-anchor="middle">Peak</text></g>
+<g class="c-coral"><rect x="223" y="173" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="185">42</text><text class="tc" x="250.5" y="199" text-anchor="middle">Decay</text></g>
+<g class="c-coral"><rect x="280" y="173" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="185">43</text><text class="tc" x="307.5" y="199" text-anchor="middle">Sustain</text></g>
+<g class="c-coral"><rect x="337" y="173" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="185">44</text><text class="tc" x="364.5" y="199" text-anchor="middle">Release</text></g>
+<g class="c-coral"><rect x="394" y="173" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="398" y="185">45</text><text class="tc" x="421.5" y="199" text-anchor="middle">Velocity</text></g>
+<g class="c-empty"><rect x="451" y="173" width="55" height="32" rx="3"/><text class="tn" x="478.5" y="192" text-anchor="middle">46</text></g>
+<g class="c-coral"><rect x="508" y="173" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="185">47</text><text class="tc" x="535.5" y="199" text-anchor="middle">Key speed</text></g>
+<g class="c-empty"><rect x="565" y="173" width="55" height="32" rx="3"/><text class="tn" x="592.5" y="192" text-anchor="middle">48</text></g>
+<g class="c-empty"><rect x="622" y="173" width="55" height="32" rx="3"/><text class="tn" x="649.5" y="192" text-anchor="middle">49</text></g>
+<text class="th" x="20" y="221">5x</text>
+<text class="tx" x="20" y="235">ENV1 amp</text>
+<g class="c-teal"><rect x="109" y="207" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="219">50</text><text class="tc" x="136.5" y="233" text-anchor="middle">Attack</text></g>
+<g class="c-teal"><rect x="166" y="207" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="219">51</text><text class="tc" x="193.5" y="233" text-anchor="middle">Peak</text></g>
+<g class="c-teal"><rect x="223" y="207" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="219">52</text><text class="tc" x="250.5" y="233" text-anchor="middle">Decay</text></g>
+<g class="c-teal"><rect x="280" y="207" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="219">53</text><text class="tc" x="307.5" y="233" text-anchor="middle">Sustain</text></g>
+<g class="c-teal"><rect x="337" y="207" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="219">54</text><text class="tc" x="364.5" y="233" text-anchor="middle">Release</text></g>
+<g class="c-empty"><rect x="394" y="207" width="55" height="32" rx="3"/><text class="tn" x="421.5" y="226" text-anchor="middle">55</text></g>
+<g class="c-empty"><rect x="451" y="207" width="55" height="32" rx="3"/><text class="tn" x="478.5" y="226" text-anchor="middle">56</text></g>
+<g class="c-teal"><rect x="508" y="207" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="219">57</text><text class="tc" x="535.5" y="233" text-anchor="middle">Key speed</text></g>
+<g class="c-empty"><rect x="565" y="207" width="55" height="32" rx="3"/><text class="tn" x="592.5" y="226" text-anchor="middle">58</text></g>
+<g class="c-empty"><rect x="622" y="207" width="55" height="32" rx="3"/><text class="tn" x="649.5" y="226" text-anchor="middle">59</text></g>
+<text class="th" x="20" y="255">6x</text>
+<text class="tx" x="20" y="269">Voice modes</text>
+<g class="c-gray"><rect x="109" y="241" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="253">60</text><text class="tc" x="136.5" y="267" text-anchor="middle">Mode</text></g>
+<g class="c-gray"><rect x="166" y="241" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="253">61</text><text class="tc" x="193.5" y="267" text-anchor="middle">Unison</text></g>
+<g class="c-gray"><rect x="223" y="241" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="253">62</text><text class="tc" x="250.5" y="267" text-anchor="middle">Spread</text></g>
+<g class="c-gray"><rect x="280" y="241" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="253">63</text><text class="tc" x="307.5" y="267" text-anchor="middle">Glide</text></g>
+<g class="c-empty"><rect x="337" y="241" width="55" height="32" rx="3"/><text class="tn" x="364.5" y="260" text-anchor="middle">64</text></g>
+<g class="c-empty"><rect x="394" y="241" width="55" height="32" rx="3"/><text class="tn" x="421.5" y="260" text-anchor="middle">65</text></g>
+<g class="c-empty"><rect x="451" y="241" width="55" height="32" rx="3"/><text class="tn" x="478.5" y="260" text-anchor="middle">66</text></g>
+<g class="c-empty"><rect x="508" y="241" width="55" height="32" rx="3"/><text class="tn" x="535.5" y="260" text-anchor="middle">67</text></g>
+<g class="c-empty"><rect x="565" y="241" width="55" height="32" rx="3"/><text class="tn" x="592.5" y="260" text-anchor="middle">68</text></g>
+<g class="c-empty"><rect x="622" y="241" width="55" height="32" rx="3"/><text class="tn" x="649.5" y="260" text-anchor="middle">69</text></g>
+<text class="th" x="20" y="289">7x</text>
+<text class="tx" x="20" y="303">Filter, amp</text>
+<g class="c-coral"><rect x="109" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="287">70</text><text class="tc" x="136.5" y="301" text-anchor="middle">Cutoff</text></g>
+<g class="c-coral"><rect x="166" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="287">71</text><text class="tc" x="193.5" y="301" text-anchor="middle">Resonance</text></g>
+<g class="c-coral"><rect x="223" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="287">72</text><text class="tc" x="250.5" y="301" text-anchor="middle">ENV2</text></g>
+<g class="c-coral"><rect x="280" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="287">73</text><text class="tc" x="307.5" y="301" text-anchor="middle">Key</text></g>
+<g class="c-coral"><rect x="337" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="287">74</text><text class="tc" x="364.5" y="301" text-anchor="middle">Velocity</text></g>
+<g class="c-coral"><rect x="394" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="398" y="287">75</text><text class="tc" x="421.5" y="301" text-anchor="middle">Amp level</text></g>
+<g class="c-coral"><rect x="451" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="455" y="287">76</text><text class="tc" x="478.5" y="301" text-anchor="middle">Vel. &gt; amp</text></g>
+<g class="c-coral"><rect x="508" y="275" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="287">77</text><text class="tc" x="535.5" y="301" text-anchor="middle">Wave</text></g>
+<g class="c-empty"><rect x="565" y="275" width="55" height="32" rx="3"/><text class="tn" x="592.5" y="294" text-anchor="middle">78</text></g>
+<g class="c-empty"><rect x="622" y="275" width="55" height="32" rx="3"/><text class="tn" x="649.5" y="294" text-anchor="middle">79</text></g>
+<text class="th" x="20" y="323">8x</text>
+<text class="tx" x="20" y="337">ENV3 mod</text>
+<g class="c-amber"><rect x="109" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="113" y="321">80</text><text class="tc" x="136.5" y="335" text-anchor="middle">Attack</text></g>
+<g class="c-amber"><rect x="166" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="170" y="321">81</text><text class="tc" x="193.5" y="335" text-anchor="middle">Peak</text></g>
+<g class="c-amber"><rect x="223" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="227" y="321">82</text><text class="tc" x="250.5" y="335" text-anchor="middle">Decay</text></g>
+<g class="c-amber"><rect x="280" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="321">83</text><text class="tc" x="307.5" y="335" text-anchor="middle">Sustain</text></g>
+<g class="c-amber"><rect x="337" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="321">84</text><text class="tc" x="364.5" y="335" text-anchor="middle">Release</text></g>
+<g class="c-amber"><rect x="394" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="398" y="321">85</text><text class="tc" x="421.5" y="335" text-anchor="middle">Dest.</text></g>
+<g class="c-amber"><rect x="451" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="455" y="321">86</text><text class="tc" x="478.5" y="335" text-anchor="middle">Depth</text></g>
+<g class="c-amber"><rect x="508" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="321">87</text><text class="tc" x="535.5" y="335" text-anchor="middle">Key speed</text></g>
+<g class="c-amber"><rect x="565" y="309" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="569" y="321">88</text><text class="tc" x="592.5" y="335" text-anchor="middle">Loop</text></g>
+<g class="c-empty"><rect x="622" y="309" width="55" height="32" rx="3"/><text class="tn" x="649.5" y="328" text-anchor="middle">89</text></g>
+<text class="th" x="20" y="357">9x</text>
+<text class="tx" x="20" y="371">Instrument</text>
+<g class="c-empty"><rect x="109" y="343" width="55" height="32" rx="3"/><text class="tn" x="136.5" y="362" text-anchor="middle">90</text></g>
+<g class="c-empty"><rect x="166" y="343" width="55" height="32" rx="3"/><text class="tn" x="193.5" y="362" text-anchor="middle">91</text></g>
+<g class="c-empty"><rect x="223" y="343" width="55" height="32" rx="3"/><text class="tn" x="250.5" y="362" text-anchor="middle">92</text></g>
+<g class="c-gray"><rect x="280" y="343" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="284" y="355">93</text><text class="tc" x="307.5" y="369" text-anchor="middle">Wave save</text></g>
+<g class="c-gray"><rect x="337" y="343" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="341" y="355">94</text><text class="tc" x="364.5" y="369" text-anchor="middle">Seq. reset</text></g>
+<g class="c-gray"><rect x="394" y="343" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="398" y="355">95</text><text class="tc" x="421.5" y="369" text-anchor="middle">Channel</text></g>
+<g class="c-gray"><rect x="451" y="343" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="455" y="355">96</text><text class="tc" x="478.5" y="369" text-anchor="middle">Omni</text></g>
+<g class="c-gray"><rect x="508" y="343" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="512" y="355">97</text><text class="tc" x="535.5" y="369" text-anchor="middle">Tune</text></g>
+<g class="c-gray"><rect x="565" y="343" width="55" height="32" rx="3" stroke-width="0.5"/><text class="tn" x="569" y="355">98</text><text class="tc" x="592.5" y="369" text-anchor="middle">Transpose</text></g>
+<g class="c-empty"><rect x="622" y="343" width="55" height="32" rx="3"/><text class="tn" x="649.5" y="362" text-anchor="middle">99</text></g>
+<text class="tx" x="20" y="398">93 and 94 are actions: they happen when the second digit goes in. 95-98 belong to the instrument, not the patch.</text>
+<text class="tx" x="20" y="416">Dashed numbers are unused. The printed card has every range; most parameters also answer the MIDI CC of the same number.</text>
+</svg>

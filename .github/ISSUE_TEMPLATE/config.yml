@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Quick-start guide
+    url: https://github.com/laurielaptop/phantasm-os/blob/main/docs/QUICKSTART.md
+    about: New to Phantasm? The ideas in pictures, the panel and the factory patches.
+  - name: Player's manual
+    url: https://github.com/laurielaptop/phantasm-os/blob/main/docs/MANUAL.md
+    about: Every control, MIDI, and what the display codes mean (section 13).

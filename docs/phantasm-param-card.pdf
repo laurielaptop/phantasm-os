@@ -1,0 +1,372 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 18485 >>
+stream
+BT /F2 18 Tf 1 0 0 1 40.0 784.0 Tm (Phantasm parameter card) Tj ET
+BT /F1 8 Tf 1 0 0 1 40.0 768.0 Tm (PARAM and two digits picks a parameter, VALUE and two digits sets it. Built from phantasm.bin sha256 48871897e7cf.) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 753.4 Tm (No.) Tj ET
+BT /F2 9 Tf 1 0 0 1 74.0 753.4 Tm (Parameter) Tj ET
+BT /F2 9 Tf 1 0 0 1 176.0 753.4 Tm (Range) Tj ET
+BT /F2 9 Tf 1 0 0 1 216.0 753.4 Tm (CC) Tj ET
+BT /F2 9 Tf 1 0 0 1 244.0 753.4 Tm (Values) Tj ET
+0.5 w 40 749.4 m 555 749.4 l S
+BT /F2 9 Tf 1 0 0 1 40.0 738.4 Tm (1x  Wave and sequence) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 730.3 Tm (10) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 730.3 Tm (Wavetable) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 730.3 Tm (0-n) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 730.3 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 730.3 Tm (the patch's tables, 0 first) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 722.2 Tm (11) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 722.2 Tm (Wave sequence) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 722.2 Tm (0-n) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 722.2 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 722.2 Tm (the patch's sequences, 0 first) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 714.1 Tm (12) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 714.1 Tm (Wave position) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 714.1 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 714.1 Tm (12) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 714.1 Tm (start, 0 first entry to 99 last, any table) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 706.0 Tm (13) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 706.0 Tm (Wave wrap) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 706.0 Tm (0-1) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 706.0 Tm (13) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 706.0 Tm (0 clamp, 1 wrap) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 697.9 Tm (14) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 697.9 Tm (Velocity > wave) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 697.9 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 697.9 Tm (14) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 689.8 Tm (15) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 689.8 Tm (Key track > wave) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 689.8 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 689.8 Tm (15) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 681.7 Tm (17) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 681.7 Tm (LFO > wave) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 681.7 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 681.7 Tm (17) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 673.6 Tm (18) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 673.6 Tm (Sequence mode) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 673.6 Tm (0-4) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 673.6 Tm (18) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 673.6 Tm (0 off, 1 step, 2 per voice, 3 random, 4 LFO) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 665.5 Tm (19) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 665.5 Tm (Sequence reset gap) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 665.5 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 665.5 Tm (19) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 665.5 Tm (silence before restart, 0 never) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 655.4 Tm (2x  Oscillators and pitch) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 647.3 Tm (20) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 647.3 Tm (Coarse A) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 647.3 Tm (38-62) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 647.3 Tm (20) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 647.3 Tm (semitones, 50 = 0) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 639.2 Tm (21) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 639.2 Tm (Fine A) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 639.2 Tm (29-71) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 639.2 Tm (21) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 639.2 Tm (1/256 octave \(4.7 cents\), 50 = 0) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 631.1 Tm (22) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 631.1 Tm (Coarse B) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 631.1 Tm (38-62) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 631.1 Tm (22) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 631.1 Tm (semitones, 50 = 0) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 623.0 Tm (23) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 623.0 Tm (Fine B) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 623.0 Tm (29-71) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 623.0 Tm (23) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 623.0 Tm (1/256 octave \(4.7 cents\), 50 = 0) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 614.9 Tm (24) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 614.9 Tm (Oscillator B level) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 614.9 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 614.9 Tm (24) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 614.9 Tm (0 = off; adds to A, so the voice gets louder) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 606.8 Tm (25) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 606.8 Tm (Bend range) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 606.8 Tm (0-12) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 606.8 Tm (25) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 606.8 Tm (whole semitones, full wheel; 2 is a whole tone, 12 an octave) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 598.7 Tm (26) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 598.7 Tm (Vintage) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 598.7 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 598.7 Tm (26) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 598.7 Tm (0 off; 1-99 more drift: each note-on gives every voice its own pitch and cutoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 590.6 Tm (offset, up to +/-8 steps \(+/-38 cents; +/-3.4 semitones of cutoff\) at 99) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 582.5 Tm (27) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 582.5 Tm (Oscillator A level) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 582.5 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 582.5 Tm (27) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 582.5 Tm (99 = full, 0 = off) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 574.4 Tm (28) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 574.4 Tm (Oscillator B source) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 574.4 Tm (0-7) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 574.4 Tm (28) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 574.4 Tm (0 A's wave, 1 white noise, 2 pink, 3 brown \(tracking the key\), 4 white, 5 pink,) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 566.3 Tm (6 brown \(fixed rate, C4\), 7 sync \(B is A's wave, hard-synced to A\)) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 556.2 Tm (3x  LFO, mod wheel and pressure) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 548.1 Tm (30) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 548.1 Tm (LFO rate) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 548.1 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 548.1 Tm (30) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 540.0 Tm (31) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 540.0 Tm (LFO > pitch) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 540.0 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 540.0 Tm (31) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 531.9 Tm (32) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 531.9 Tm (LFO shape) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 531.9 Tm (0-4) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 531.9 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 531.9 Tm (0 triangle, 1 ramp up, 2 ramp down, 3 square, 4 random) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 523.8 Tm (33) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 523.8 Tm (LFO sync) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 523.8 Tm (0-2) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 523.8 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 523.8 Tm (0 free-running, 1 restart at note-on, 2 MIDI clock \(not built: runs as 0\)) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 515.7 Tm (34) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 515.7 Tm (LFO > cutoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 515.7 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 515.7 Tm (34) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 507.6 Tm (35) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 507.6 Tm (LFO delay) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 507.6 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 507.6 Tm (35) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 499.5 Tm (36) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 499.5 Tm (Mod wheel depth) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 499.5 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 499.5 Tm (36) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 491.4 Tm (37) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 491.4 Tm (Pressure depth) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 491.4 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 491.4 Tm (37) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 491.4 Tm (channel aftertouch, 0 = off) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 483.3 Tm (38) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 483.3 Tm (Mod wheel destination) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 483.3 Tm (0-1) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 483.3 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 483.3 Tm (0 LFO depth, 1 wave position) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 475.2 Tm (39) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 475.2 Tm (Pressure destination) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 475.2 Tm (0-2) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 475.2 Tm (39) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 475.2 Tm (0 LFO depth, 1 wave position, 2 cutoff) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 465.1 Tm (4x  Filter envelope \(ENV2\)) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 457.0 Tm (40) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 457.0 Tm (ENV2 attack) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 457.0 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 457.0 Tm (40) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 448.9 Tm (41) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 448.9 Tm (ENV2 peak) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 448.9 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 448.9 Tm (41) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 440.8 Tm (42) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 440.8 Tm (ENV2 decay) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 440.8 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 440.8 Tm (42) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 432.7 Tm (43) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 432.7 Tm (ENV2 sustain) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 432.7 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 432.7 Tm (43) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 424.6 Tm (44) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 424.6 Tm (ENV2 release) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 424.6 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 424.6 Tm (44) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 416.5 Tm (45) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 416.5 Tm (Velocity > ENV2) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 416.5 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 416.5 Tm (45) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 416.5 Tm (0 = depth as set \(72\); 99 scales it by velocity / 127) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 408.4 Tm (47) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 408.4 Tm (ENV2 key speed) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 408.4 Tm (1-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 408.4 Tm (47) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 408.4 Tm (50 = none; 99 halves decay and release per octave above key 60) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 398.2 Tm (5x  Amp envelope \(ENV1\)) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 390.1 Tm (50) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 390.1 Tm (ENV1 attack) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 390.1 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 390.1 Tm (50) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 382.0 Tm (51) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 382.0 Tm (ENV1 peak) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 382.0 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 382.0 Tm (51) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 373.9 Tm (52) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 373.9 Tm (ENV1 decay) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 373.9 Tm (0-85) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 373.9 Tm (52) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 373.9 Tm (exponential) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 365.8 Tm (53) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 365.8 Tm (ENV1 sustain) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 365.8 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 365.8 Tm (53) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 357.7 Tm (54) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 357.7 Tm (ENV1 release) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 357.7 Tm (0-85) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 357.7 Tm (54) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 357.7 Tm (exponential) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 349.6 Tm (57) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 349.6 Tm (ENV1 key speed) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 349.6 Tm (1-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 349.6 Tm (57) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 349.6 Tm (50 = none; as 47) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 339.5 Tm (6x  Voice and keyboard modes) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 331.4 Tm (60) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 331.4 Tm (Voice mode) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 331.4 Tm (0-2) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 331.4 Tm (60) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 331.4 Tm (0 poly, 1 mono retrigger, 2 mono legato) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 323.3 Tm (61) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 323.3 Tm (Unison voices) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 323.3 Tm (1-8) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 323.3 Tm (61) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 323.3 Tm (per note; 1 = off) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 315.2 Tm (62) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 315.2 Tm (Unison spread) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 315.2 Tm (0-21) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 315.2 Tm (62) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 315.2 Tm (1/256 octave \(4.7 cents\) a step) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 307.1 Tm (63) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 307.1 Tm (Glide) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 307.1 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 307.1 Tm (63) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 307.1 Tm (0 off; 1-99 slower, an octave in 22 ms to 33 s) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 297.0 Tm (7x  Filter and amp) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 288.9 Tm (70) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 288.9 Tm (Filter cutoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 288.9 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 288.9 Tm (70) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 280.8 Tm (71) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 280.8 Tm (Resonance) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 280.8 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 280.8 Tm (71) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 280.8 Tm (high settings self-oscillate) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 272.7 Tm (72) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 272.7 Tm (ENV2 > cutoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 272.7 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 272.7 Tm (72) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 264.6 Tm (73) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 264.6 Tm (Key track > cutoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 264.6 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 264.6 Tm (73) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 256.5 Tm (74) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 256.5 Tm (Velocity > cutoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 256.5 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 256.5 Tm (74) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 248.4 Tm (75) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 248.4 Tm (Amp level) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 248.4 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 248.4 Tm (75) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 248.4 Tm (lower it if chords or unison distort) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 240.3 Tm (76) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 240.3 Tm (Velocity > amp) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 240.3 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 240.3 Tm (76) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 232.2 Tm (77) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 232.2 Tm (Wave > cutoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 232.2 Tm (1-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 232.2 Tm (77) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 232.2 Tm (bipolar, 50 = none: + opens the filter up the table) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 222.1 Tm (8x  Modulation envelope \(ENV3\)) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 214.0 Tm (80) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 214.0 Tm (ENV3 attack) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 214.0 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 214.0 Tm (80) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 205.9 Tm (81) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 205.9 Tm (ENV3 peak) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 205.9 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 205.9 Tm (81) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 197.8 Tm (82) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 197.8 Tm (ENV3 decay) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 197.8 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 197.8 Tm (82) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 189.7 Tm (83) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 189.7 Tm (ENV3 sustain) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 189.7 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 189.7 Tm (83) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 181.6 Tm (84) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 181.6 Tm (ENV3 release) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 181.6 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 181.6 Tm (84) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 173.5 Tm (85) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 173.5 Tm (ENV3 destination) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 173.5 Tm (0-5) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 173.5 Tm (85) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 173.5 Tm (0 pitch A+B, 1 pitch A, 2 pitch B, 3 resonance, 4 LFO depth, 5 wave position) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 165.4 Tm (86) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 165.4 Tm (ENV3 depth) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 165.4 Tm (0-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 165.4 Tm (86) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 165.4 Tm (bipolar, 50 = none) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 157.3 Tm (87) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 157.3 Tm (ENV3 key speed) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 157.3 Tm (1-99) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 157.3 Tm (87) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 157.3 Tm (50 = none; as 47) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 149.2 Tm (88) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 149.2 Tm (ENV3 loop) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 149.2 Tm (0-1) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 149.2 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 149.2 Tm (0 = off; 1 = restarts from its attack at the end of its decay while the key is held) Tj ET
+BT /F2 9 Tf 1 0 0 1 40.0 139.0 Tm (9x  Actions and instrument settings) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 130.9 Tm (93) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 130.9 Tm (Save user waves) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 130.9 Tm (action) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 130.9 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 130.9 Tm (the changed ones, at the second digit) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 122.8 Tm (94) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 122.8 Tm (Restart sequence) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 122.8 Tm (action) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 122.8 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 122.8 Tm (at the second digit) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 114.7 Tm (95) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 114.7 Tm (MIDI channel) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 114.7 Tm (1-16) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 114.7 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 114.7 Tm (numbered as a DAW numbers them) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 106.6 Tm (96) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 106.6 Tm (Omni) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 106.6 Tm (0-1) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 106.6 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 106.6 Tm (0 off, 1 on) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 98.5 Tm (97) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 98.5 Tm (Master tune) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 98.5 Tm (29-71) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 98.5 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 98.5 Tm (saved with the channel and omni; 50 = none, 4.7 cents a step) Tj ET
+BT /F1 9 Tf 1 0 0 1 40.0 90.4 Tm (98) Tj ET
+BT /F1 9 Tf 1 0 0 1 74.0 90.4 Tm (Transpose) Tj ET
+BT /F1 9 Tf 1 0 0 1 176.0 90.4 Tm (38-62) Tj ET
+BT /F1 9 Tf 1 0 0 1 216.0 90.4 Tm (-) Tj ET
+BT /F1 9 Tf 1 0 0 1 244.0 90.4 Tm (saved with the channel and omni; 50 = none, semitones) Tj ET
+BT /F1 8 Tf 1 0 0 1 40.0 74.2 Tm (CC: a MIDI controller of the same number edits the parameter; 0-127 scales onto its range,) Tj ET
+BT /F1 8 Tf 1 0 0 1 40.0 66.9 Tm (and the display shows the edit. A dash means no CC: set it from the panel or by SysEx.) Tj ET
+BT /F1 8 Tf 1 0 0 1 40.0 59.7 Tm (0-n: n is one less than the number of wavetables \(10\) or sequences \(11\) in the loaded patch.) Tj ET
+BT /F1 8 Tf 1 0 0 1 40.0 52.4 Tm (action: happens when the second digit is keyed; there is no value to enter.) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+18988
+%%EOF

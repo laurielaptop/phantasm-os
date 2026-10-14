@@ -1,0 +1,33 @@
+name: Suggest a feature
+description: An idea for Phantasm or Phantasm Editor, or a way to make something better.
+labels: [enhancement]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which part?
+      options:
+        - Phantasm (on the Mirage)
+        - Phantasm Editor (in the browser)
+        - Both, or not sure
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: Describe the feature or change.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What would it let you do?
+      description: The sound, workflow or problem behind the idea. This helps more than a specific design.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Examples from other instruments, sketches, or links.
