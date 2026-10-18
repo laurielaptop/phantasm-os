@@ -84,6 +84,16 @@ crossfading between waves.
 - Optionally, a MIDI keyboard or controller, and a computer with a MIDI
   interface for Phantasm Editor and for sending your own waves.
 
+## Phantasm OS
+
+Copy this .hfe file to your USB device to run on a Gotek floppy emulator.
+
+**[Download phantasm-release.hfe](https://github.com/laurielaptop/phantasm-os/releases/latest/download/phantasm-release.hfe)**
+
+Make a floppy disk image using this .img file
+
+**[Download phantasm-release.img](https://github.com/laurielaptop/phantasm-os/releases/latest/download/phantasm-release.img)**
+
 ## Phantasm Editor
 
 ![Phantasm Editor](images/phantasm-editor.png)
@@ -175,6 +185,6 @@ palette, the usage rules and the status of the artwork's licence.
 
 The original documentation text and diagrams in `docs/` and this README are
 licensed under [CC BY 4.0](docs/LICENSE.md), except for the reserved brand
-artwork and any third-party material. Phantasm Editor is MIT-licensed; see
-[`editor/LICENSE`](editor/LICENSE). These licences do not cover the Phantasm
+artwork and any third-party material. Phantasm Editor and OS are MIT-licensed; see
+[`LICENSE`](LICENSE). These licences do not cover the Phantasm
 brand assets.

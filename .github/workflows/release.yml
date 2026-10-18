@@ -1,9 +1,7 @@
 name: Release
 
-# Pushing a tag such as v1.2.0 creates a draft GitHub Release with the editor,
-# PDFs and a SHA256SUMS file attached. Add the .hfe disk image to the draft
-# (it is built privately), then run scripts/update-release-checksums.sh
-# against that draft before publishing.
+# Pushing a version tag creates a draft release with both disk images,
+# the editor, PDFs and checksums covering every attachment.
 on:
   push:
     tags: ["v[0-9]+.[0-9]+.[0-9]+*"]
@@ -24,6 +22,8 @@ jobs:
           cp editor/phantasm-editor.html dist/phantasm-editor.html
           cp docs/phantasm-manual.pdf "dist/phantasm-manual-${v}.pdf"
           cp docs/phantasm-param-card.pdf "dist/phantasm-param-card-${v}.pdf"
+          cp build/phantasm-release.hfe dist/
+          cp build/phantasm-release.img dist/
           (cd dist && sha256sum * > SHA256SUMS)
       - name: Create draft release
         env:

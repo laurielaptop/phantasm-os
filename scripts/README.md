@@ -17,12 +17,15 @@ The source renderer verifies that all manual body text is preserved and fits
 within page boundaries. Visually review the resulting PDF before committing it.
 The cover is unnumbered; body pagination starts at page 1.
 
-A version tag creates a draft GitHub release containing the public editor,
-PDFs and their initial checksums. To finalize it:
+Before tagging, commit both privately built disk images in `build/`:
+`phantasm-release.hfe` for Gotek and `phantasm-release.img` for floppy drives.
 
-1. Attach the privately built `.hfe` disk image and any other release assets.
-2. Run `scripts/update-release-checksums.sh v1.2.0` with authenticated GitHub CLI.
-   It downloads all draft assets and replaces `SHA256SUMS`, including the disk
-   image. It refuses published releases and drafts without an `.hfe` image.
-3. Review the draft, asset list and checksums before publishing. Repeat step 2
-   after adding or replacing any asset.
+Pushing a version tag creates a draft GitHub release containing both disk
+images, the public editor, PDFs and `SHA256SUMS` covering all attachments.
+Review the draft, then publish it as Latest in GitHub. The README's
+`releases/latest/download/` links become public after publication.
+
+If you add or replace any attachment in the draft afterward, run
+`scripts/update-release-checksums.sh v1.2.0` with authenticated GitHub CLI
+before publishing. It downloads all draft assets and replaces `SHA256SUMS`.
+It refuses published releases and drafts without an `.hfe` image.
