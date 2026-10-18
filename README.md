@@ -171,3 +171,9 @@ respective owners.
 The Phantasm wordmark and transmission emblem are shown here to identify the
 project. See [brand credits and permissions](docs/BRAND.md) for the approved
 palette, the usage rules and the status of the artwork's licence.
+
+The original documentation text and diagrams in `docs/` and this README are
+licensed under [CC BY 4.0](docs/LICENSE.md), except for the reserved brand
+artwork and any third-party material. Phantasm Editor is MIT-licensed; see
+[`editor/LICENSE`](editor/LICENSE). These licences do not cover the Phantasm
+brand assets.
