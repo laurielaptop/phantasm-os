@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="../README.md"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/PH-LOGO-003-lockup-yellow.svg">
+    <img src="assets/brand/PH-LOGO-003-lockup-black.svg" alt="Phantasm" width="320">
+  </picture></a>
+</p>
+
 # Phantasm MIDI implementation
 
 **Protocol 4.0, schema 1.17**, Phantasm v1.2.0.

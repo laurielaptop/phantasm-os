@@ -67,6 +67,33 @@ EOF
   '
 } > "$docs/MIDI-IMPLEMENTATION.md"
 
+# Branding: put the approved lockup (docs/assets/brand, kept in this repo) at
+# the head of each generated document. The manual and the quick start also get
+# the slogan as a cover line.
+masthead() {
+  local file="$1" width="$2" slogan="${3:-}" tmp
+  tmp="$(mktemp)"
+  {
+    cat <<EOF
+<p align="center">
+  <a href="../README.md"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/PH-LOGO-003-lockup-yellow.svg">
+    <img src="assets/brand/PH-LOGO-003-lockup-black.svg" alt="Phantasm" width="$width">
+  </picture></a>
+</p>
+
+EOF
+    if [ -n "$slogan" ]; then
+      printf '<p align="center"><em>%s</em></p>\n\n' "$slogan"
+    fi
+    cat "$file"
+  } > "$tmp"
+  mv "$tmp" "$file"
+}
+masthead "$docs/QUICKSTART.md" 420 "Embrace the glitch!"
+masthead "$docs/MANUAL.md" 420 "Embrace the glitch!"
+masthead "$docs/MIDI-IMPLEMENTATION.md" 320
+
 # Printable PDFs.
 cp "$phantasm/engine/build/phantasm-param-card.pdf" "$phantasm/engine/build/phantasm-manual.pdf" "$docs/"
 

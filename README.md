@@ -1,6 +1,14 @@
-# Phantasm
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/PH-LOGO-003-lockup-yellow.svg">
+    <img src="docs/assets/brand/PH-LOGO-003-lockup-black.svg" alt="Phantasm" width="480">
+  </picture>
+</h1>
 
-**A wavetable synthesizer operating system for the Ensoniq Mirage.**
+<p align="center">
+  <strong>A wavetable synthesizer operating system for the Ensoniq Mirage.</strong><br>
+  <em>Embrace the glitch!</em>
+</p>
 
 Phantasm replaces the Mirage's sampling OS with a wavetable synthesis engine in
 the spirit of the PPG Wave and the Prophet VS. Single-cycle 8-bit waves are
@@ -157,3 +165,9 @@ expected, and what happened, including any code on the display.
 Phantasm is an independent project. It is not affiliated with or endorsed by
 Ensoniq or its successors. Ensoniq and Mirage are trademarks of their
 respective owners.
+
+## Credits and permissions
+
+The Phantasm wordmark and transmission emblem are shown here to identify the
+project. See [brand credits and permissions](docs/BRAND.md) for the approved
+palette, the usage rules and the status of the artwork's licence.

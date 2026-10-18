@@ -1,5 +1,6 @@
 name: Ask a question
 description: How do I...? Questions about using Phantasm or Phantasm Editor.
+title: "[Question] "
 labels: [question]
 body:
   - type: markdown
