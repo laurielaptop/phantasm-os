@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" viewBox="0 0 680 330" role="img"><title>The 512-wave pool</title><desc>Wave memory holds 512 waves of 256 bytes each. Waves 0-255 are the factory waves, eight families of 32: analog, harm, vox, bell, fm, organ, hollow and digital. Waves 256-383 are white, pink and scrape noise, played only by oscillator B. Waves 384-511 are the user area: the factory disk puts 32 Evolver waves at 384-415 and leaves the rest empty. A table is a list of wave numbers, for example the table vox lists waves 64 to 95.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}.t{font-size:14px;font-weight:400;fill:#2C2C2A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}.ts{font-size:12px;font-weight:400;fill:#5F5E5A}.tx{font-size:11px;font-weight:400;fill:#5F5E5A}.tn{font-size:10px;font-weight:500;fill:#888780}.tc{font-size:10.5px;font-weight:400;fill:#5F5E5A}.rule{stroke:#B4B2A9}.leader{stroke:#888780;stroke-width:1;stroke-dasharray:3 3;fill:none}.arr{stroke:#5F5E5A;stroke-width:1.5;fill:none}.wave{stroke:#534AB7;stroke-width:1.5;fill:none;stroke-linejoin:round}.axis{stroke:#D3D1C7;stroke-width:.5}.hot{fill:none;stroke:#993C1D;stroke-width:2}.c-purple>rect,rect.c-purple{fill:#EEEDFE;stroke:#534AB7}.c-purple>.t,.c-purple>.th{fill:#3C3489}.c-purple>.ts,.c-purple>.tx,.c-purple>.tc{fill:#3C3489}.c-teal>rect,rect.c-teal{fill:#E1F5EE;stroke:#0F6E56}.c-teal>.t,.c-teal>.th{fill:#085041}.c-teal>.ts,.c-teal>.tx,.c-teal>.tc{fill:#085041}.c-coral>rect,rect.c-coral{fill:#FAECE7;stroke:#993C1D}.c-coral>.t,.c-coral>.th{fill:#712B13}.c-coral>.ts,.c-coral>.tx,.c-coral>.tc{fill:#712B13}.c-gray>rect,rect.c-gray{fill:#F1EFE8;stroke:#5F5E5A}.c-gray>.t,.c-gray>.th{fill:#444441}.c-gray>.ts,.c-gray>.tx,.c-gray>.tc{fill:#5F5E5A}.c-amber>rect,rect.c-amber{fill:#FAEEDA;stroke:#854F0B}.c-amber>.t,.c-amber>.th{fill:#633806}.c-amber>.ts,.c-amber>.tx,.c-amber>.tc{fill:#633806}.c-empty>rect,rect.c-empty{fill:none;stroke:#D3D1C7;stroke-dasharray:3 3}.c-empty>.tn{fill:#B4B2A9}@media (prefers-color-scheme:dark){.t,.th{fill:#F1EFE8}.ts,.tx{fill:#B4B2A9}.tn{fill:#888780}.rule{stroke:#5F5E5A}.arr{stroke:#B4B2A9}.wave{stroke:#AFA9EC}.axis{stroke:#444441}.hot{stroke:#F0997B}.c-purple>rect,rect.c-purple{fill:#3C3489;stroke:#AFA9EC}.c-purple>.t,.c-purple>.th{fill:#CECBF6}.c-purple>.ts,.c-purple>.tx{fill:#AFA9EC}.c-purple>.tc{fill:#CECBF6}.c-teal>rect,rect.c-teal{fill:#085041;stroke:#5DCAA5}.c-teal>.t,.c-teal>.th{fill:#9FE1CB}.c-teal>.ts,.c-teal>.tx{fill:#5DCAA5}.c-teal>.tc{fill:#9FE1CB}.c-coral>rect,rect.c-coral{fill:#712B13;stroke:#F0997B}.c-coral>.t,.c-coral>.th{fill:#F5C4B3}.c-coral>.ts,.c-coral>.tx{fill:#F0997B}.c-coral>.tc{fill:#F5C4B3}.c-gray>rect,rect.c-gray{fill:#444441;stroke:#B4B2A9}.c-gray>.t,.c-gray>.th{fill:#D3D1C7}.c-gray>.ts,.c-gray>.tx,.c-gray>.tc{fill:#D3D1C7}.c-amber>rect,rect.c-amber{fill:#633806;stroke:#EF9F27}.c-amber>.t,.c-amber>.th{fill:#FAC775}.c-amber>.ts,.c-amber>.tx{fill:#EF9F27}.c-amber>.tc{fill:#FAC775}.c-empty>rect,rect.c-empty{stroke:#5F5E5A}.c-empty>.tn{fill:#5F5E5A}}</style>
+<text class="th" x="20" y="30">The wave pool: 512 single-cycle waves, loaded from the disk at boot</text>
+<g class="c-purple"><rect x="20.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="40.0" y="118.0" text-anchor="middle">analog</text></g>
+<g class="c-purple"><rect x="60.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="80.0" y="118.0" text-anchor="middle">harm</text></g>
+<g class="c-purple"><rect x="100.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="120.0" y="118.0" text-anchor="middle">vox</text></g>
+<g class="c-purple"><rect x="140.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="160.0" y="118.0" text-anchor="middle">bell</text></g>
+<g class="c-purple"><rect x="180.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="200.0" y="118.0" text-anchor="middle">fm</text></g>
+<g class="c-purple"><rect x="220.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="240.0" y="118.0" text-anchor="middle">organ</text></g>
+<g class="c-purple"><rect x="260.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="280.0" y="118.0" text-anchor="middle">hollow</text></g>
+<g class="c-purple"><rect x="300.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="320.0" y="118.0" text-anchor="middle">digital</text></g>
+<g class="c-teal"><rect x="340.0" y="92" width="80.0" height="44" stroke-width="0.5"/><text class="tx" x="380.0" y="118.0" text-anchor="middle">white</text></g>
+<g class="c-teal"><rect x="420.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="440.0" y="118.0" text-anchor="middle">pink</text></g>
+<g class="c-teal"><rect x="460.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="480.0" y="118.0" text-anchor="middle">scrape</text></g>
+<g class="c-coral"><rect x="500.0" y="92" width="40.0" height="44" stroke-width="0.5"/><text class="tx" x="520.0" y="118.0" text-anchor="middle">Evolver</text></g>
+<g class="c-empty"><rect x="540.0" y="92" width="120.0" height="44" stroke-width="0.5"/><text class="tn" x="600.0" y="118.0" text-anchor="middle">empty</text></g>
+<line class="rule" x1="20.0" y1="136" x2="20.0" y2="142"/>
+<text class="tx" x="20.0" y="156">0</text>
+<line class="rule" x1="340.0" y1="136" x2="340.0" y2="142"/>
+<text class="tx" x="340.0" y="156" text-anchor="middle">256</text>
+<line class="rule" x1="500.0" y1="136" x2="500.0" y2="142"/>
+<text class="tx" x="500.0" y="156" text-anchor="middle">384</text>
+<line class="rule" x1="660.0" y1="136" x2="660.0" y2="142"/>
+<text class="tx" x="660.0" y="156" text-anchor="end">511</text>
+<path class="rule" fill="none" d="M22.0 86 L22.0 80 L338.0 80 L338.0 86"/>
+<text class="ts" x="180.0" y="56" text-anchor="middle">Factory waves 0-255</text>
+<text class="tx" x="180.0" y="72" text-anchor="middle">eight families of 32, made from recipes</text>
+<path class="rule" fill="none" d="M342.0 86 L342.0 80 L498.0 80 L498.0 86"/>
+<text class="ts" x="420.0" y="56" text-anchor="middle">Noise 256-383</text>
+<text class="tx" x="420.0" y="72" text-anchor="middle">oscillator B only (28)</text>
+<path class="rule" fill="none" d="M502.0 86 L502.0 80 L658.0 80 L658.0 86"/>
+<text class="ts" x="580.0" y="56" text-anchor="middle">User area 384-511</text>
+<text class="tx" x="580.0" y="72" text-anchor="middle">your own, by MIDI Sample Dump</text>
+<path class="arr" d="M120.0 162 C120.0 180, 150 170, 150 208" marker-end="url(#arrow)"/>
+<text class="ts" x="20" y="180">A table is just a list</text>
+<text class="ts" x="20" y="196">of wave numbers:</text>
+<g class="c-purple"><rect x="150" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="171.0" y="229.0" text-anchor="middle">64</text></g>
+<g class="c-purple"><rect x="196" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="217.0" y="229.0" text-anchor="middle">65</text></g>
+<g class="c-purple"><rect x="242" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="263.0" y="229.0" text-anchor="middle">66</text></g>
+<g class="c-purple"><rect x="288" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="309.0" y="229.0" text-anchor="middle">67</text></g>
+<g class="c-purple"><rect x="334" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="355.0" y="229.0" text-anchor="middle">68</text></g>
+<g class="c-empty"><rect x="380" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="401.0" y="229.0" text-anchor="middle">...</text></g>
+<g class="c-purple"><rect x="426" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="447.0" y="229.0" text-anchor="middle">94</text></g>
+<g class="c-purple"><rect x="472" y="210" width="42" height="32" rx="4" stroke-width="0.5"/><text class="tx" x="493.0" y="229.0" text-anchor="middle">95</text></g>
+<text class="ts" x="524" y="231">table vox, 32 entries</text>
+<text class="tx" x="20" y="276">A patch carries up to eight tables (and eight sequences). Tables cost a few bytes each, not wave</text>
+<text class="tx" x="20" y="292">memory, so they can share waves. A table holds 1 to 128 entries, all factory waves or all user waves.</text>
+</svg>

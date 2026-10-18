@@ -1,0 +1,58 @@
+name: Report a bug
+description: Something in Phantasm or Phantasm Editor doesn't work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. Please check the [existing issues](https://github.com/laurielaptop/phantasm-os/issues?q=is%3Aissue) first, and section 13 of the [manual](https://github.com/laurielaptop/phantasm-os/blob/main/docs/MANUAL.md#13-display-codes-and-errors) if the display shows an error code.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Where is the problem?
+      options:
+        - Phantasm (on the Mirage)
+        - Phantasm Editor (in the browser)
+        - Both, or not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Phantasm version
+      description: The number the display shows at boot, for example `1.1`.
+      placeholder: "1.1"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include any code the display showed, and the patch number if it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The shortest sequence of panel presses, MIDI messages or editor actions that shows the problem.
+      placeholder: |
+        1. Load patch 03
+        2. PARAM 7 0, VALUE 9 9
+        3. ...
+  - type: textarea
+    id: setup
+    attributes:
+      label: Your setup
+      description: Gotek and FlashFloppy version, MIDI interface and controller. For editor problems, your browser and its version, your operating system, and whether you opened the file directly or served it from localhost.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Screenshots, recordings, `.syx` files or browser console output. Drag files in here.

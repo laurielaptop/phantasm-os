@@ -1,0 +1,19 @@
+name: Ask a question
+description: How do I...? Questions about using Phantasm or Phantasm Editor.
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The [quick-start guide](https://github.com/laurielaptop/phantasm-os/blob/main/docs/QUICKSTART.md) and the [player's manual](https://github.com/laurielaptop/phantasm-os/blob/main/docs/MANUAL.md) answer many questions, and someone may have asked already: [search the issues](https://github.com/laurielaptop/phantasm-os/issues?q=is%3Aissue+label%3Aquestion).
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Optional, but it helps us answer.

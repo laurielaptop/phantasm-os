@@ -1,0 +1,32 @@
+name: Report a documentation problem
+description: A mistake, something unclear, or something missing in the guides, manual, MIDI implementation or parameter card.
+labels: [documentation]
+body:
+  - type: dropdown
+    id: document
+    attributes:
+      label: Which document?
+      options:
+        - Quick-start guide
+        - Player's manual
+        - MIDI implementation
+        - Parameter card
+        - README or the editor instructions
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Section or page
+      placeholder: "Manual, section 8: Envelopes"
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording
+      description: Optional.
