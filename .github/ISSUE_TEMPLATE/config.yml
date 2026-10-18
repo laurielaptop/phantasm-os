@@ -6,3 +6,9 @@ contact_links:
   - name: Player's manual
     url: https://github.com/laurielaptop/phantasm-os/blob/main/docs/MANUAL.md
     about: Every control, MIDI, and what the display codes mean (section 13).
+  - name: Releases and downloads
+    url: https://github.com/laurielaptop/phantasm-os/releases/latest
+    about: The latest Phantasm disk image, Phantasm Editor and release notes.
+  - name: MIDI implementation
+    url: https://github.com/laurielaptop/phantasm-os/blob/main/docs/MIDI-IMPLEMENTATION.md
+    about: Control changes, SysEx and Sample Dump, for editor and controller-map authors.

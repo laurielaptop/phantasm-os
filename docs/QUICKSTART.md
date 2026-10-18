@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="../README.md"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/PH-LOGO-003-lockup-yellow.svg">
+    <img src="assets/brand/PH-LOGO-003-lockup-black.svg" alt="Phantasm" width="420">
+  </picture></a>
+</p>
+
+<p align="center"><em>Embrace the glitch!</em></p>
+
 # Phantasm quick start
 
 Phantasm turns an Ensoniq Mirage into an 8-voice wavetable synthesizer. This
@@ -28,6 +37,12 @@ A sampler plays a recording. Phantasm plays a **wave**: one cycle of a sound,
 sounds static. The movement comes from switching between waves while the note
 plays.
 
+![Comparison diagram. A sampler plays a recording, shown as a changing waveform. Phantasm repeats a single 256-point cycle at the pitch of the key. A wavetable is an ordered list of waves; Phantasm can switch waves while a note plays. Waveforms are illustrative.](assets/PH-ILLUS-005-panel-v001-screen.png)
+
+*PH-ILLUS-005 v001 © 2026 laurielaptop. Used under the
+[Phantasm Media Internal Use Licence](assets/LICENSE.md); no reuse rights are
+granted outside the Phantasm Projects.*
+
 ![A wavetable and its pointer](diagrams/qs-wavetable.svg)
 
 - A **wavetable** is an ordered list of waves, arranged so that neighbours
@@ -54,8 +69,8 @@ boot:
 
 | Waves | What they are |
 |---|---|
-| 0-255 | The factory waves: eight families of 32 (analog shapes, harmonic growth, vocal formants, bells, FM, waveshaping, hollow and resonant, lo-fi grit), each built from a recipe |
-| 256-383 | White, pink and brown noise, for oscillator B (section 3) |
+| 0-255 | The factory waves: eight families of 32 (analog shapes, harmonic growth, vocal formants, bells, FM, drawbar organ, hollow and resonant, lo-fi digital), each built from a recipe |
+| 256-383 | White, pink and scrape noise, for oscillator B (section 3) |
 | 384-511 | The **user area**, for waves of your own, sent by MIDI Sample Dump. The factory disk puts 32 Evolver single cycles at 384-415 and leaves the rest empty |
 
 A table is only a list of wave numbers, so tables are small and can share
@@ -137,12 +152,12 @@ the suggested edit.
 | 03 | Voice Sequence | The same sequence, stepped per voice | `PARAM 1 8`, `VALUE 0 3` for random |
 | 04 | Resonant Filter | A bell table through a self-oscillating filter. It whistles on purpose | `PARAM 7 1` and turn the resonance down |
 | 05 | Velocity Touch | Velocity moving the loudness, the cutoff and the starting wave together | Play soft and hard |
-| 06 | Lo-Fi Grit | The grit table, with little filtering | `PARAM 7 0` and close the cutoff |
+| 06 | Lo-Fi Digital | The digital table, with little filtering, and the wave glitching about nine times a second on the `scatter` sequence | `PARAM 7 0` and close the cutoff; `VALUE 0 5` for `leap` |
 | 07 | Evolver Waves | The user area's sampled single cycles | `PARAM 1 2` and step through the table |
 
 Patches 08 to 99 start out as plain init patches to build on.
 
-## 6. Five quick recipes
+## 6. Six quick recipes
 
 Each recipe starts from a loaded patch. Save the result with **SEQ Save** and
 two digits, for example `2 0` for patch 20.
@@ -156,6 +171,12 @@ below 50 and `12` to 99 to sweep the other way.
 key), `62` to 6 (spread them in pitch) and `63` to 20 (glide). If it distorts,
 lower the amp level `75`.
 
+**One-finger chords.** Set `60` to 3 (chord): both digits blink. Hold C, E
+and G, then let go: every key now plays a major chord built on it. Set `60`
+to 3 again to capture another chord, or capture one key to go back to single
+notes. With `60` at 4 (chord legato) and `63` at 20, held keys slide the whole
+chord. Save the patch to keep the chord.
+
 **Breath noise.** Set `28` to 1 (white noise on B), then raise `24` (B level)
 until the noise sits under the wave. Close the cutoff `70` a little.
 
@@ -166,7 +187,10 @@ put.
 
 **A wave sequence.** Set `18` to 1 (step) and play single notes: each one
 starts on the next step of sequence `11`. Change `11` to try another
-sequence, and use `PARAM 9 4` to go back to step 0.
+sequence, and use `PARAM 9 4` to go back to step 0. Patches 00 to 07 already
+have a mode of 1 or more, so turning `11` is audible on any of them: 3 holds the
+first wave, and 4, 5 and 6 (`flip`, `leap`, `scatter`) jump between waves that
+sound clearly unlike each other. *Embrace the glitch!*
 
 ## 7. Keeping it clean
 

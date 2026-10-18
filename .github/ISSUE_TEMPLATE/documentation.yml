@@ -1,5 +1,6 @@
 name: Report a documentation problem
 description: A mistake, something unclear, or something missing in the guides, manual, MIDI implementation or parameter card.
+title: "[Docs] "
 labels: [documentation]
 body:
   - type: dropdown

@@ -1,6 +1,13 @@
+<p align="center">
+  <a href="../README.md"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/PH-LOGO-003-lockup-yellow.svg">
+    <img src="assets/brand/PH-LOGO-003-lockup-black.svg" alt="Phantasm" width="320">
+  </picture></a>
+</p>
+
 # Phantasm MIDI implementation
 
-**Protocol 4.0, schema 1.16**, Phantasm v1.1.0.
+**Protocol 4.0, schema 1.17**, Phantasm v1.2.0.
 
 Everything Phantasm receives and sends over MIDI: control changes, the SysEx
 protocol used by [Phantasm Editor](../README.md#phantasm-editor), and the
@@ -59,6 +66,21 @@ binary (40 → `28`), never as `PARAM_TAB`'s BCD.
   *L*" from the byte and the palette in the sector dump. The other stored forms are plain: an ENUM row stores its display
   value as it is, a SIGNED row stores `display − 50` as a signed byte, and a
   CHAN row stores `display − 1`.
+- **Editor inputs (#121; host-side text, no firmware, protocol or schema
+  change).** `engine/tools/param-values.tsv` holds one label per display value
+  of every ENUM parameter whose values are names (13, 18, 28, 32, 33, 38, 39,
+  60, 85, 88, 96), and one unit line for every SIGNED parameter and numeric
+  ENUM (25, 61, 62): the unit, the neutral display value (`50` for SIGNED) and
+  the cents one display step moves. `make param-values-check` holds the file
+  to `PARAM_TAB` (a value without a label, a label past `aux`, a SIGNED row
+  without a unit all fail) and writes `engine/build/phantasm-editor-inputs.json`
+  with the labels, units and the **init patch**. The init patch is the image's
+  own `ENG_PATCH` (map symbol; `PP_SIZE` live bytes, then the sector's reserved
+  bytes as zero, 96 in all, in the stored form a `21` carries), a 16-byte zero
+  name (`name_hex`), and the palette of whatever sector it is written into:
+  `PP_TABLE` and `PP_SEQ` are 0, the first wavetable and sequence of that
+  palette, so an editor keeps the loaded patch's palette. It is the patch every
+  unused disk slot is seeded with.
 
 ## 2. Control changes
 
@@ -124,7 +146,7 @@ and minor (`sv sv'`), the sector size a `21` carries, in bytes, as
 100, numbered 00 to 99), and the loaded palette's wavetable and sequence
 counts (`wt sq`). The table above writes `np` where 1.x had `bs`.
 **Protocol 2.1 (#84)** appends the firmware's version, three bytes at the end:
-the OS version's major and minor (`om on`, 1 and 1 for v1.1) and a release flag
+the OS version's major and minor (`om on`, 1 and 2 for v1.2) and a release flag
 (`rf`: 1 on a release build, 0 on any other). It is the number the boot display
 shows, from the same source (`engine/VERSION`). A 2.0 reader that takes the
 first ten data bytes reads a 2.1 reply unchanged; the new bytes are a minor
@@ -162,7 +184,7 @@ edits, and the palette in RAM is the loaded sector's.
 
 **`20` → `21`, the sector dump.** `20` has no data. The reply is the sector
 as a disk holds it, its first 616 bytes: the palette (504 bytes, DISK-FORMAT
-§0.2 and §4), then the edit buffer's patch (96 bytes: 74 live, then 22
+§0.2 and §4), then the edit buffer's patch (96 bytes: 81 live, then 15
 reserved, sent as zero), then the patch's name (16 bytes, DISK-FORMAT §0.2),
 each byte as two nibbles, 1,232 of them, then the
 checksum. That makes 1,239 bytes on the wire with the frame. The patch is
@@ -193,7 +215,7 @@ with NAK `08`, and the instrument is left with the fallback palette, as after
 a bad disk sector. The patch's fields are not range-checked: the host writes
 only what the schema allows, and an index past its list plays entry 0. The
 reserved bytes are summed in the checksum like the rest and then ignored
-(schema 1.3; 1.4 to 1.15 made `$3F` to `$49` live): they are stored, and dumped back, as zeros. A write that is
+(schema 1.3; 1.4 to 1.17 made `$3F` to `$50` live): they are stored, and dumped back, as zeros. A write that is
 accepted makes the RAM a good sector, so it may be saved even after a failed
 load, and the display follows it: the selected parameter's value from the
 written patch is on the display within one panel sweep (#91).

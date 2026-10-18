@@ -1,5 +1,6 @@
 name: Report a bug
 description: Something in Phantasm or Phantasm Editor doesn't work as it should.
+title: "[Bug] "
 labels: [bug]
 body:
   - type: markdown

@@ -1,6 +1,14 @@
-# Phantasm
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/PH-LOGO-003-lockup-yellow.svg">
+    <img src="docs/assets/brand/PH-LOGO-003-lockup-black.svg" alt="Phantasm" width="480">
+  </picture>
+</h1>
 
-**A wavetable synthesizer operating system for the Ensoniq Mirage.**
+<p align="center">
+  <strong>A wavetable synthesizer operating system for the Ensoniq Mirage.</strong><br>
+  <em>Embrace the glitch!</em>
+</p>
 
 Phantasm replaces the Mirage's sampling OS with a wavetable synthesis engine in
 the spirit of the PPG Wave and the Prophet VS. Single-cycle 8-bit waves are
@@ -17,9 +25,11 @@ cannot harm the instrument.
 This repository is Phantasm's public home: the documentation, the editor, and
 the place to [report problems and give feedback](#feedback-and-support).
 
-> **Current version: 1.1.0, the first public preview** (2026-10-13).
-> Every feature has been confirmed on a real Mirage in its own hardware test,
-> but the release image as a whole is still being played in.
+> **Current version: 1.2.0** (2026-10-16). See the
+> [release notes and downloads](https://github.com/laurielaptop/phantasm-os/releases/latest).
+> Chord mode passed on a real Mirage. The glitch sequences and the new wave
+> families are confirmed in the emulator and are still to be played on
+> hardware, so treat this release as a preview in those areas.
 
 ## Main features
 
@@ -30,9 +40,13 @@ the place to [report problems and give feedback](#feedback-and-support).
   The wave position moves with the modulation envelope, the LFO, velocity, the
   key, the mod wheel and channel pressure.
 - **Per-keypress wave sequencing.** A sequence picks where each note starts in
-  its table, in five modes: off, step, per voice, random and LFO.
+  its table, in five modes: off, step, per voice, random and LFO. The factory
+  disk includes glitch sequences, and every factory patch responds to its
+  sequence.
+- **Chord keyboard mode.** Hold a chord, let go, and every key plays it.
 - **A 512-wave pool on the disk.** 256 factory waves in eight families
-  (analog shapes, harmonics, voices, bells and more), 128 waves of noise, and a
+  (including the new `organ` and `digital` families, harmonics, voices, bells
+  and more), 128 waves of noise, and a
   128-wave user area you fill with your own waves over MIDI Sample Dump.
 - **Fixed modulation routes with depth controls.** Filter envelope, velocity,
   key, LFO, pressure and the wave position itself to cutoff; a looping third
@@ -57,7 +71,7 @@ crossfading between waves.
 
 | Document | What it covers |
 |---|---|
-| [Quick-start guide](docs/QUICKSTART.md) | Start here. The wavetable ideas in pictures, the panel, a tour of the factory patches and five quick recipes. |
+| [Quick-start guide](docs/QUICKSTART.md) | Start here. The wavetable ideas in pictures, the panel, a tour of the factory patches and six quick recipes. |
 | [Player's manual](docs/MANUAL.md) ([PDF](docs/phantasm-manual.pdf)) | Every control in the order you need it, MIDI, the user area, and what the display codes mean. |
 | [MIDI implementation](docs/MIDI-IMPLEMENTATION.md) | Control changes, the SysEx protocol and the Sample Dump receive, for editor, librarian and controller-map authors. |
 | [Parameter card](docs/phantasm-param-card.pdf) (PDF) | Every parameter on one printable page. It doubles as the CC chart. |
@@ -69,6 +83,16 @@ crossfading between waves.
 - A USB stick holding the Phantasm `.hfe` disk image.
 - Optionally, a MIDI keyboard or controller, and a computer with a MIDI
   interface for Phantasm Editor and for sending your own waves.
+
+## Phantasm OS
+
+Copy this .hfe file to your USB device to run on a Gotek floppy emulator.
+
+**[Download phantasm-release.hfe](https://github.com/laurielaptop/phantasm-os/releases/latest/download/phantasm-release.hfe)**
+
+Make a floppy disk image using this .img file
+
+**[Download phantasm-release.img](https://github.com/laurielaptop/phantasm-os/releases/latest/download/phantasm-release.img)**
 
 ## Phantasm Editor
 
@@ -103,7 +127,7 @@ The editor is a single HTML file with nothing to install.
 3. Click **Connect** and allow MIDI and SysEx access when the browser asks.
    The editor asks for nothing until you click.
 4. Choose the MIDI input and output connected to the Mirage, then
-   **Connect selected ports**.
+   **Connect** again.
 
 If your browser will not grant MIDI access to a local file, serve it from
 your own computer instead. In the folder that holds the file, run
@@ -116,12 +140,14 @@ and open <http://localhost:8000/phantasm-editor.html>.
 
 Edits made in the editor live in the instrument's memory until you save them
 to disk, and in the browser only until you close the page: export your work as
-`.syx` files to keep it. This editor release works with Phantasm 1.1.0 (SysEx
-protocol 4.0); it refuses to edit an instrument running an incompatible
-version.
+`.syx` files to keep it. This editor release (v1.2.0) works with Phantasm 1.2.0 (SysEx
+protocol 4.0, schema 1.17). An instrument still on 1.1.0 connects read-only:
+update its disk image first. The editor refuses to edit any other
+incompatible version.
 
 > **Preview.** The editor is in its own preview: it is tested against a
-> simulated instrument, and acceptance on a real Mirage is in progress. Please
+> simulated instrument; browser/tablet qualification and acceptance on a real
+> Mirage remain incomplete. Please
 > [report anything that goes wrong](#feedback-and-support).
 
 ## Feedback and support
@@ -150,3 +176,15 @@ expected, and what happened, including any code on the display.
 Phantasm is an independent project. It is not affiliated with or endorsed by
 Ensoniq or its successors. Ensoniq and Mirage are trademarks of their
 respective owners.
+
+## Credits and permissions
+
+The Phantasm wordmark and transmission emblem are shown here to identify the
+project. See [brand credits and permissions](docs/BRAND.md) for the approved
+palette, the usage rules and the status of the artwork's licence.
+
+The original documentation text and diagrams in `docs/` and this README are
+licensed under [CC BY 4.0](docs/LICENSE.md), except for the reserved brand
+artwork and any third-party material. Phantasm Editor and OS are MIT-licensed; see
+[`LICENSE`](LICENSE). These licences do not cover the Phantasm
+brand assets.

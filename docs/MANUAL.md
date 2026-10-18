@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="../README.md"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/PH-LOGO-003-lockup-yellow.svg">
+    <img src="assets/brand/PH-LOGO-003-lockup-black.svg" alt="Phantasm" width="420">
+  </picture></a>
+</p>
+
+<p align="center"><em>Embrace the glitch!</em></p>
+
 # Phantasm player's manual
 
 Phantasm turns the Ensoniq Mirage into a wavetable synthesizer. This manual is
@@ -58,8 +67,8 @@ unless you save it first.
 3. Wait. The disk's waves are read into the instrument before it will play, so
    boot takes about 21 seconds and there is little to see on the display
    until it ends. This is not a fault.
-4. When boot ends the display shows the version, two digits: 11 for version
-   1.1 (a release build shows 1.1 with a dot between them). It stays until you
+4. When boot ends the display shows the version, two digits: 12 for version
+   1.2 (a release build shows 1.2 with a dot between them). It stays until you
    touch the panel.
 
 Patch 00 is loaded at boot, and the MIDI channel, omni, master tune and
@@ -230,8 +239,29 @@ one, and parameter **18** says how it is played, on each note:
 | 3 | Random | Each note picks a step at random |
 | 4 | LFO | Each voice takes the next step every LFO cycle while its key is held |
 
+The factory palette's sequences, which parameter 11 picks between (turn 11
+with a mode of 1 or more and the next note starts elsewhere):
+
+| 11 | Name | Steps |
+|---|---|---|
+| 0 | eight | positions 0 to 7 |
+| 1 | four | 0, 8, 16, 24 |
+| 2 | spread | eight positions chosen to sound as unlike as possible on the vocal table |
+| 3 | hold | position 0 only: plays as if the mode were 0 |
+| 4 | flip | the two ends of the table, 0 and 31 |
+| 5 | leap | eight positions jumping between the start and the end |
+| 6 | scatter | eight positions across the table |
+
+The last four are the *glitch* sequences: every jump lands on a wave that
+sounds clearly unlike the last one, on every factory table. Patches 00 to 07
+are saved with a mode of 1 or more, on `hold` except patches 02, 03 and 06, so
+11 does nothing until you turn it. Patch 06 plays `scatter` in mode 4, the
+wave jumping about nine times a second while a key is held. The patch on the
+user palette (07) has `eight`, `four` and `hold`.
+
 The sequence chooses where a note starts, and the modulation above moves it
-from there. Parameter **19** restarts the sequence after that much silence
+from there. A strong scan (ENV3 or the LFO to the wave pointer) moves the wave
+further than the sequence's offsets, so turn that down to hear them. Parameter **19** restarts the sequence after that much silence
 between notes (0 is never). Action **94** restarts it by hand.
 
 In mode 4 a note starts where mode 2 would put it, on its voice's own step, and
@@ -311,15 +341,15 @@ the voice louder (section 10).
 | 0 | The same wave as A |
 | 1 | White noise, following the key |
 | 2 | Pink noise, following the key |
-| 3 | Brown noise, following the key |
+| 3 | Scrape noise, following the key |
 | 4 | White noise at a fixed rate |
 | 5 | Pink noise at a fixed rate |
-| 6 | Brown noise at a fixed rate |
+| 6 | Scrape noise at a fixed rate |
 | 7 | The same wave as A, hard-synced to A |
 
-White is the brightest of the three and brown the darkest. In 1 to 3 the noise's
+White is plain hiss and pink a darker one; scrape is metallic, noise ringing through the modes of a struck bar, like metal being scraped. In 1 to 3 the noise's
 pitch follows the key, so it gets higher up the keyboard; in 4 to 6 the rate
-is the same for every key, that of C4, and 22 and 23 still shift it. Pink and brown
+is the same for every key, that of C4, and 22 and 23 still shift it. Pink and scrape
 take on a pitch towards the top of the keyboard: that is the instrument's
 lo-fi character.
 
@@ -469,7 +499,7 @@ MIDI controller number; set it from the panel or by SysEx.
 | 17 | How far it moves the wave position |
 | 32 | Shape: 0 triangle, 1 ramp up, 2 ramp down, 3 square, 4 random |
 | 33 | Sync: 0 free-running (each voice's LFO keeps going between notes), 1 restart at each note, so the same sweep every time the key is pressed; 2 is reserved for MIDI clock and runs as 0 |
-| 35 | Delay: how long before it comes in after a note starts |
+| 35 | Delay: how long before it comes in after a note starts. At 0 the LFO starts at once, at full depth; above 0 it is silent for the delay and then fades in |
 
 ### Velocity, key and wheels
 
@@ -496,8 +526,44 @@ MIDI controller number; set it from the panel or by SysEx.
 | 0 | Poly | Up to eight notes at once, oldest note taken first when they run out |
 | 1 | Mono, retrigger | One note at a time, the last key played; every new key restarts the envelopes |
 | 2 | Mono, legato | As 1, but a key played while another is held changes the pitch only and does not restart the envelopes |
+| 3 | Chord, retrigger | As 1, but every key plays the patch's stored chord built on it |
+| 4 | Chord, legato | As 2, but every key plays the patch's stored chord built on it |
 
-In mono, letting go of the sounding key goes back to the newest key still held.
+In mono and chord, letting go of the sounding key goes back to the newest key
+still held.
+
+### Chords
+
+In chord mode (3 or 4) each key you play sounds a whole chord on that key, one
+chord at a time. The patch stores the chord as up to seven intervals above the
+key you play, so the chord moves with your hand: store C, D#, G and F plays F,
+G#, C. Every note of the chord is one voice at the key's velocity, so a chord
+of up to eight notes uses up to all eight voices. Unison and spread are not
+used in chord mode; they come back when you return to 0-2. A chord note
+higher than the top C (key 96) is left out. In legato (4) a key played while
+another is held moves the whole chord to the new key without restarting it,
+and with glide on the chord slides there in one piece.
+
+**To capture a chord:**
+
+1. Set **60** to 3 or 4, from the panel, with CC 60 or over SysEx. Both
+   digits start blinking: the Mirage is waiting for a chord. Entering the value
+   60 already has works too, which is how you capture a new chord.
+2. Hold the chord. While the digits blink, each key plays one note as in poly,
+   so you hear what you are building. The lowest key you hold is the root.
+3. Let go of any key. The chord is stored, the blinking stops, and from the
+   next key you play, every key sounds that chord.
+
+Keys held with the sustain pedal count as held, so with the pedal down the
+chord is stored when you lift the pedal. With more than eight keys held, the
+lowest eight are kept.
+
+**To clear the chord**, capture a single key: arm, play one key, let go. Chord
+mode then plays one note at a time, as mono does.
+
+**To cancel** while the digits blink, set 60 to 0, 1 or 2: the stored chord is
+kept. Loading a patch also cancels. The chord is part of the patch: save the
+patch to keep it, and leaving chord mode does not clear it.
 
 **Unison, 61**, makes one key sound several voices, 1 to 8: 1 is off. The
 voices are spread in pitch by **62**, in steps of 4.7 cents, from 0 to 21.
@@ -512,8 +578,9 @@ pitch its voice last played.
 **Vintage, 26**, is described in section 6.
 
 Mono and unison combine: the mono note is then the group of unison voices.
-Voice mode, unison, spread, glide and vintage are part of the patch, so a
-mono bass or a unison lead is back as you saved it when you load it.
+Voice mode, unison, spread, glide, vintage and the stored chord are part of
+the patch, so a mono bass, a unison lead or a chord pad is back as you saved
+it when you load it.
 
 ## 10. Gain staging
 
@@ -610,7 +677,7 @@ and ranges are the ones the panel shows and the printed card repeats.
 | 25 | Bend range | 0-12 | 25 | whole semitones, full wheel; 2 is a whole tone, 12 an octave |
 | 26 | Vintage | 0-99 | 26 | 0 off; 1-99 more drift: each note-on gives every voice its own pitch and cutoff offset, up to +/-8 steps (+/-38 cents; +/-3.4 semitones of cutoff) at 99 |
 | 27 | Oscillator A level | 0-99 | 27 | 99 = full, 0 = off |
-| 28 | Oscillator B source | 0-7 | 28 | 0 A's wave, 1 white noise, 2 pink, 3 brown (tracking the key), 4 white, 5 pink, 6 brown (fixed rate, C4), 7 sync (B is A's wave, hard-synced to A) |
+| 28 | Oscillator B source | 0-7 | 28 | 0 A's wave, 1 white noise, 2 pink, 3 scrape (tracking the key), 4 white, 5 pink, 6 scrape (fixed rate, C4), 7 sync (B is A's wave, hard-synced to A) |
 | 30 | LFO rate | 0-99 | 30 | - |
 | 31 | LFO > pitch | 0-99 | 31 | - |
 | 32 | LFO shape | 0-4 | - | 0 triangle, 1 ramp up, 2 ramp down, 3 square, 4 random |
@@ -634,7 +701,7 @@ and ranges are the ones the panel shows and the printed card repeats.
 | 53 | ENV1 sustain | 0-99 | 53 | - |
 | 54 | ENV1 release | 0-85 | 54 | exponential |
 | 57 | ENV1 key speed | 1-99 | 57 | 50 = none; as 47 |
-| 60 | Voice mode | 0-2 | 60 | 0 poly, 1 mono retrigger, 2 mono legato |
+| 60 | Voice mode | 0-4 | 60 | 0 poly, 1 mono retrigger, 2 mono legato, 3 chord retrigger, 4 chord legato |
 | 61 | Unison voices | 1-8 | 61 | per note; 1 = off |
 | 62 | Unison spread | 0-21 | 62 | 1/256 octave (4.7 cents) a step |
 | 63 | Glide | 0-99 | 63 | 0 off; 1-99 slower, an octave in 22 ms to 33 s |
@@ -763,7 +830,7 @@ Do not send other SysEx while a dump runs: any other SysEx message ends it.
 | Display | Meaning |
 |---|---|
 | Two digits | The patch number, or a parameter's number or value as you type |
-| 11, or 1.1 | The version, from boot until you touch the panel |
+| 12, or 1.2 | The version, from boot until you touch the panel |
 | Ld | A patch is loading |
 | Sd | A save is writing: a patch, or the user waves |
 | EE | A parameter number that does not exist |

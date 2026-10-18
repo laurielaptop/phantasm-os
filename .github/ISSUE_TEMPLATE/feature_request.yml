@@ -1,5 +1,6 @@
 name: Suggest a feature
 description: An idea for Phantasm or Phantasm Editor, or a way to make something better.
+title: "[Feature] "
 labels: [enhancement]
 body:
   - type: dropdown
