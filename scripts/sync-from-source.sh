@@ -5,8 +5,9 @@
 #   scripts/sync-from-source.sh [PHANTASM_REF]
 #
 # PHANTASM_REF is the Phantasm tag or commit the documents are taken from
-# (default: the latest tag). The PDFs come from Phantasm's engine/build, so
-# build them at that ref first (`make -C engine param-card manual`). The editor
+# (default: the latest tag). Build the parameter card at that ref first
+# (`make -C engine param-card`). The public manual is rendered locally; see
+# scripts/README.md for its Python and Node dependencies. The editor
 # is rebuilt from phantasmeditor's checked-out tree.
 #
 # The private repositories link to files that are not published here, so the
@@ -27,6 +28,8 @@ show() { git -C "$phantasm" show "$ref:$1"; }
 
 # Quick-start guide and its diagrams.
 show docs/QUICKSTART.md | perl -0pe '
+  s/Five quick recipes/Six quick recipes/;
+  s/Embrace the glitch\./Embrace the glitch!/;
   s/the printed parameter card \(`make -C engine param-card`\)/the [printed parameter card](phantasm-param-card.pdf)/;
   s/- The \*\*parameter card\*\*: `make -C engine param-card` writes\n\s*`engine\/build\/phantasm-param-card.pdf`, and `make -C engine manual` prints\n\s*the manual\./- The [parameter card](phantasm-param-card.pdf) (PDF), and the\n  [manual as a PDF](phantasm-manual.pdf) for printing./;
   s/\[The MIDI and SysEx protocol\]\(midi-protocol.md\)/[The MIDI implementation](MIDI-IMPLEMENTATION.md)/;
@@ -68,6 +71,7 @@ an editor, a librarian or a controller map. The one-page
 
 EOF
   show docs/midi-protocol.md | sed -n '/^## 1\. Parameters/,$p' | perl -0pe '
+    s/1 and 1 for v1\.1/1 and 2 for v1.2/;
     s/the printed card \(`make param-card`\)/the printed [parameter card](phantasm-param-card.pdf)/;
     s/The protocol, and every\nbyte layout, are in \[SDS.md\]\(SDS.md\); this section is what an editor needs\./This section is what\na sender needs; the byte layouts are those of the MIDI Sample Dump Standard./;
   '
@@ -108,7 +112,8 @@ if [ "$actual_panel_sha" != "$expected_panel_sha" ]; then
 fi
 
 # Printable PDFs.
-cp "$phantasm/engine/build/phantasm-param-card.pdf" "$phantasm/engine/build/phantasm-manual.pdf" "$docs/"
+cp "$phantasm/engine/build/phantasm-param-card.pdf" "$docs/"
+"${PYTHON:-python3}" "$here/scripts/render-public-manual.py" "$phantasm"
 
 # Editor: rebuild the single-file standalone page.
 (cd "$editor" && npm run --silent build:standalone && npm run --silent test:standalone)

@@ -2,7 +2,8 @@ name: Release
 
 # Pushing a tag such as v1.2.0 creates a draft GitHub Release with the editor,
 # PDFs and a SHA256SUMS file attached. Add the .hfe disk image to the draft
-# (it is built privately), then publish.
+# (it is built privately), then run scripts/update-release-checksums.sh
+# against that draft before publishing.
 on:
   push:
     tags: ["v[0-9]+.[0-9]+.[0-9]+*"]

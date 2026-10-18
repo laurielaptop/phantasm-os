@@ -50,12 +50,12 @@ ones. Do not put unoutlined yellow on white.
 
 ## Sizes and clear space
 
-| Asset | Minimum width | Clear space around the visible artwork |
+| Asset | Minimum full canvas size | Clear space beyond visible artwork |
 |---|---|---|
-| Wordmark | 180 px | One letter-stem width |
-| Full emblem | 32 px | The radius of its central disc |
-| Micro emblem | 16 px | The radius of its central disc |
-| Lockup | 320 px | The radius of the emblem's central disc |
+| Wordmark | 180 px wide | 18 design units; at minimum size round outward to 5 px |
+| Full emblem | 32 px square | 27 design units; at minimum size round outward to 4 px |
+| Micro emblem | 16 px square | 27 design units; at minimum size round outward to 2 px |
+| Lockup | 320 px wide | 27 units at emblem scale; at minimum size round outward to 9 px |
 
 Scale clear space with the artwork. Keep the aspect ratio, do not stretch, add
 effects to or redraw the logos, and use the emblem alone below the lockup

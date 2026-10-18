@@ -146,7 +146,7 @@ and minor (`sv sv'`), the sector size a `21` carries, in bytes, as
 100, numbered 00 to 99), and the loaded palette's wavetable and sequence
 counts (`wt sq`). The table above writes `np` where 1.x had `bs`.
 **Protocol 2.1 (#84)** appends the firmware's version, three bytes at the end:
-the OS version's major and minor (`om on`, 1 and 1 for v1.1) and a release flag
+the OS version's major and minor (`om on`, 1 and 2 for v1.2) and a release flag
 (`rf`: 1 on a release build, 0 on any other). It is the number the boot display
 shows, from the same source (`engine/VERSION`). A 2.0 reader that takes the
 first ten data bytes reads a 2.1 reply unchanged; the new bytes are a minor

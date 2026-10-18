@@ -157,7 +157,7 @@ the suggested edit.
 
 Patches 08 to 99 start out as plain init patches to build on.
 
-## 6. Five quick recipes
+## 6. Six quick recipes
 
 Each recipe starts from a loaded patch. Save the result with **SEQ Save** and
 two digits, for example `2 0` for patch 20.
@@ -190,7 +190,7 @@ starts on the next step of sequence `11`. Change `11` to try another
 sequence, and use `PARAM 9 4` to go back to step 0. Patches 00 to 07 already
 have a mode of 1 or more, so turning `11` is audible on any of them: 3 holds the
 first wave, and 4, 5 and 6 (`flip`, `leap`, `scatter`) jump between waves that
-sound clearly unlike each other. *Embrace the glitch.*
+sound clearly unlike each other. *Embrace the glitch!*
 
 ## 7. Keeping it clean
 

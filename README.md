@@ -71,7 +71,7 @@ crossfading between waves.
 
 | Document | What it covers |
 |---|---|
-| [Quick-start guide](docs/QUICKSTART.md) | Start here. The wavetable ideas in pictures, the panel, a tour of the factory patches and five quick recipes. |
+| [Quick-start guide](docs/QUICKSTART.md) | Start here. The wavetable ideas in pictures, the panel, a tour of the factory patches and six quick recipes. |
 | [Player's manual](docs/MANUAL.md) ([PDF](docs/phantasm-manual.pdf)) | Every control in the order you need it, MIDI, the user area, and what the display codes mean. |
 | [MIDI implementation](docs/MIDI-IMPLEMENTATION.md) | Control changes, the SysEx protocol and the Sample Dump receive, for editor, librarian and controller-map authors. |
 | [Parameter card](docs/phantasm-param-card.pdf) (PDF) | Every parameter on one printable page. It doubles as the CC chart. |
@@ -117,7 +117,7 @@ The editor is a single HTML file with nothing to install.
 3. Click **Connect** and allow MIDI and SysEx access when the browser asks.
    The editor asks for nothing until you click.
 4. Choose the MIDI input and output connected to the Mirage, then
-   **Connect selected ports**.
+   **Connect** again.
 
 If your browser will not grant MIDI access to a local file, serve it from
 your own computer instead. In the folder that holds the file, run
@@ -136,7 +136,8 @@ update its disk image first. The editor refuses to edit any other
 incompatible version.
 
 > **Preview.** The editor is in its own preview: it is tested against a
-> simulated instrument, and acceptance on a real Mirage is in progress. Please
+> simulated instrument; browser/tablet qualification and acceptance on a real
+> Mirage remain incomplete. Please
 > [report anything that goes wrong](#feedback-and-support).
 
 ## Feedback and support
