@@ -2,7 +2,7 @@
 
 Copyright (c) 2026 laurielaptop. All rights reserved.
 
-This licence applies to the Phantasm Media assets copied into this directory.
+This licence applies to the Phantasm Media assets copied into `docs/assets/`.
 
 ## Grant
 
@@ -25,7 +25,7 @@ acting on behalf of a Phantasm Project maintainer.
 2. Keep this licence and `NOTICE.md` with copied assets, or reference them from
    the receiving repository's licence notice.
 3. Use of the Phantasm name, logos and character is subject to
-   [`docs/BRAND.md`](../../BRAND.md).
+   [`docs/BRAND.md`](../BRAND.md).
 
 ## Not granted
 

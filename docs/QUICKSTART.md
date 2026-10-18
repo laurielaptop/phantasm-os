@@ -37,6 +37,12 @@ A sampler plays a recording. Phantasm plays a **wave**: one cycle of a sound,
 sounds static. The movement comes from switching between waves while the note
 plays.
 
+![Comparison diagram. A sampler plays a recording, shown as a changing waveform. Phantasm repeats a single 256-point cycle at the pitch of the key. A wavetable is an ordered list of waves; Phantasm can switch waves while a note plays. Waveforms are illustrative.](assets/PH-ILLUS-005-panel-v001-screen.png)
+
+*PH-ILLUS-005 v001 © 2026 laurielaptop. Used under the
+[Phantasm Media Internal Use Licence](assets/LICENSE.md); no reuse rights are
+granted outside the Phantasm Projects.*
+
 ![A wavetable and its pointer](diagrams/qs-wavetable.svg)
 
 - A **wavetable** is an ordered list of waves, arranged so that neighbours

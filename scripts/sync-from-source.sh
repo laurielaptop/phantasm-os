@@ -36,6 +36,12 @@ for svg in $(git -C "$phantasm" ls-tree --name-only "$ref" docs/diagrams/ | grep
   show "$svg" > "$docs/diagrams/$(basename "$svg")"
 done
 
+# Owner-approved PH-ILLUS-005 screen export for Quick-start section 2.
+# Fail the sync if the source copy no longer has the expected insertion point.
+perl -0pi -e '
+  s/(switching between waves while the note\nplays\.)/$1\n\n![Comparison diagram. A sampler plays a recording, shown as a changing waveform. Phantasm repeats a single 256-point cycle at the pitch of the key. A wavetable is an ordered list of waves; Phantasm can switch waves while a note plays. Waveforms are illustrative.](assets\/PH-ILLUS-005-panel-v001-screen.png)\n\n*PH-ILLUS-005 v001 © 2026 laurielaptop. Used under the\n[Phantasm Media Internal Use Licence](assets\/LICENSE.md); no reuse rights are\ngranted outside the Phantasm Projects.*\n/ or die "quick-start media insertion point changed\n";
+' "$docs/QUICKSTART.md"
+
 # Player's manual.
 show docs/MANUAL.md | perl -0pe '
   s/read the quick-start guide, docs\/QUICKSTART.md, first/read the [quick-start guide](QUICKSTART.md) first/;
@@ -93,6 +99,13 @@ EOF
 masthead "$docs/QUICKSTART.md" 420 "Embrace the glitch!"
 masthead "$docs/MANUAL.md" 420 "Embrace the glitch!"
 masthead "$docs/MIDI-IMPLEMENTATION.md" 320
+
+expected_panel_sha="7c6d8810ed674d44cc7fd9b5b2fdd0910eb02972f519245536f29e39cb9d44c8"
+actual_panel_sha="$(shasum -a 256 "$here/docs/assets/PH-ILLUS-005-panel-v001-screen.png" | awk '{print $1}')"
+if [ "$actual_panel_sha" != "$expected_panel_sha" ]; then
+  echo "PH-ILLUS-005 screen export hash mismatch" >&2
+  exit 1
+fi
 
 # Printable PDFs.
 cp "$phantasm/engine/build/phantasm-param-card.pdf" "$phantasm/engine/build/phantasm-manual.pdf" "$docs/"

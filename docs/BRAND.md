@@ -14,7 +14,7 @@ documents use it, and what you may do with it.
 
 The Phantasm logo, emblem and other artwork remain all rights reserved. They
 may be copied, adapted and distributed **within the Phantasm Projects** under
-the [Phantasm Media Internal Use Licence](assets/brand/LICENSE.md). No licence
+the [Phantasm Media Internal Use Licence](assets/LICENSE.md). No licence
 is granted to the public for reuse outside those projects; the public
 repository copy is available to view, not to reuse, modify or redistribute.
 Do not use the assets to suggest endorsement. The licence and provenance
@@ -32,8 +32,9 @@ respective owners.
 | Wordmark | `PH-LOGO-001-wordmark-black.svg`, `PH-LOGO-001-wordmark-yellow.svg` | Available for narrow spaces |
 | Full emblem | `PH-LOGO-002-emblem-colour.svg` (yellow roundel), `PH-LOGO-002-emblem-black.svg`, `PH-LOGO-002-emblem-yellow.svg` | Available |
 | Micro emblem (one arc) | `PH-LOGO-002-emblem-micro-colour.svg` | For sizes below 32 px |
+| Explanatory diagram | `PH-ILLUS-005-panel-v001-screen.png` | Quick-start §2; media artwork, separately credited and not covered by CC BY 4.0 |
 
-All are vector, with no fonts or external resources. The slogan is
+The logo files are vector, with no fonts or external resources. The slogan is
 **Embrace the glitch!**, always with that capitalisation and punctuation.
 
 ## Palette

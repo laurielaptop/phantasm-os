@@ -10,7 +10,10 @@ give appropriate credit, link to the licence, and indicate if changes were
 made. Do not imply endorsement by the author. The full legal terms are at
 [creativecommons.org/licenses/by/4.0/legalcode](https://creativecommons.org/licenses/by/4.0/legalcode).
 
-This grant does not cover the Phantasm wordmark, emblem, slogan or other brand
-artwork in `docs/assets/brand/`, which remain all rights reserved, or the
-editor software and other software in this repository. Third-party material
+This grant does not cover Phantasm Media assets in `docs/assets/`, including
+the wordmark, emblem, slogan and PH-ILLUS-005 illustration. Those assets are
+used within the Phantasm Projects under the separate
+[Phantasm Media Internal Use Licence](assets/LICENSE.md); they remain
+unlicensed for reuse outside those projects. Nor does this grant cover the
+editor software or other software in this repository. Third-party material
 and trademarks retain their respective terms and owners' rights.
