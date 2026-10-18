@@ -12,11 +12,13 @@ documents use it, and what you may do with it.
 
 ## Permissions
 
-**No licence is granted for the Phantasm logo, emblem or other artwork.** The
-brand files in [`assets/brand/`](assets/brand/) are here so the project can
-identify itself. Please do not reuse, modify or
-redistribute them, or use them to suggest endorsement, without asking first
-(open a [question](https://github.com/laurielaptop/phantasm-os/issues/new?template=question.yml)).
+The Phantasm logo, emblem and other artwork remain all rights reserved. They
+may be copied, adapted and distributed **within the Phantasm Projects** under
+the [Phantasm Media Internal Use Licence](assets/brand/LICENSE.md). No licence
+is granted to the public for reuse outside those projects; the public
+repository copy is available to view, not to reuse, modify or redistribute.
+Do not use the assets to suggest endorsement. The licence and provenance
+notice are kept alongside the copied files.
 
 Phantasm is an independent project. It is not affiliated with or endorsed by
 Ensoniq or its successors. Ensoniq and Mirage are trademarks of their
