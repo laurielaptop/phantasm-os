@@ -167,23 +167,74 @@ the panel, a program change or a MIDI editor.
 
 **Cancel** before the second digit abandons the save. The save is written and
 then read back from the disk, and an error shows if it did not match.
+**After an error, do not load or restart to check the save:** that discards
+unsaved work. Follow section 13 first. The panel-save anomaly recorded in
+TEST-055 remains under investigation (#129); keep an independent backup.
 
 ### Saving the instrument settings
 
 The MIDI channel (95), omni (96), master tune (97) and transpose (98) belong
 to the instrument, not to a patch. They are written to the disk together with
-a patch save, but only when one of them changed since boot. Changing patches
-never changes them. A disk saved before master tune and transpose existed
-loads with both at 50 (none).
+a patch save, but only when one of them changed since boot or the last
+successful settings save. Changing patches never changes them. A disk saved
+before master tune and transpose existed loads with both at 50 (none).
 
 ### Notes
 
 - A save is refused (EP) when the disk is write protected (section 13).
-- After a failed load the instrument plays a plain default sound and refuses
+- After a failed load the instrument uses a fallback palette and refuses
   to save until a patch loads well, so a read error cannot overwrite a good
-  patch with the default. Load a patch that works, then save.
-- The Gotek has one image at a time. To work with more than 100 patches,
-  swap images.
+  patch with the fallback. Preserve remaining work as section 13 describes
+  before loading a patch that works.
+- Patch saves do not save user waves. Action 93 does that separately
+  (section 5). A backup of the whole image includes patches, settings and
+  saved waves; a patch dump alone does not.
+
+### Changing Gotek images
+
+**Use a power-off disk change.** Selecting another image while Phantasm runs
+does not reload its waves or instrument settings. Patch loads read only the
+selected patch and its palette from the image currently selected on the
+Gotek. Patch saves write that image too. The old waves still sound, and the
+firmware still uses the old boot's user-area eligibility and settings-save
+comparison. Action 93 writes fixed user-area sectors without checking the
+new image's header. Do not load or save after a live image change.
+
+This procedure follows the firmware paths; the complete disk-change and
+error-recovery procedures below are **unverified on hardware** for v1.2.0 and
+v1.2.1.
+Use disposable copies for qualification, not your only saved sounds.
+
+1. Leave the original image selected. Stop MIDI playback and automatic
+   program changes; finish all transfers. Save the wanted patch and changed
+   settings, and separately press PARAM 9 3 for changed user waves. If any
+   save fails, follow section 13 before proceeding. Keep host copies of patch
+   dumps and the source files used for Sample Dump transfers.
+2. Record parameters 95-98. Power off only after completed saves or a
+   deliberate decision to lose the remaining unsaved work. A power cycle
+   discards RAM patch edits, unsaved settings and unsaved user waves.
+3. With the Mirage off and no Gotek access, back up the original HFE on the
+   computer. Keep it unchanged and work on a separate copy. Restore the USB
+   stick, select the intended compatible image and switch the Mirage on.
+4. Wait for boot to finish without a disk error. It loads that image's wave
+   pool, settings and patch 00. Check the image, sound and settings before
+   making a save. On an error, stop and use section 13.
+
+If you accidentally changed images while running, stop disk and MIDI
+commands. Do not save to the new image. The old pool and dirty-wave flags do
+not establish what belongs on it. Preserve existing host backups and record
+what you can before the power-off procedure; if an access has already
+happened, treat its result as uncertain.
+
+Matching patch-sector versions do not mean matching sounds. v1.2.0 replaces
+v1.1's shape and grit families with organ and digital and changes the brown
+noise content to scrape; an older patch can load but sound different.
+Keep the old image with its original waves and settings. Raw copies of older,
+incompatible patch sectors are refused, not migrated. Intentional transfers
+need a compatible host conversion where necessary, matching wave content
+and a reboot of the destination image before any write; live image swapping
+is not a qualified transfer method. A patch dump carries its palette, patch
+and name, but neither the wave pool nor instrument settings.
 
 ## 5. Waves, tables and sequences
 
@@ -253,11 +304,10 @@ with a mode of 1 or more and the next note starts elsewhere):
 | 6 | scatter | eight positions across the table |
 
 The last four are the *glitch* sequences: every jump lands on a wave that
-sounds clearly unlike the last one, on every factory table. Patches 00 to 07
-are saved with a mode of 1 or more, on `hold` except patches 02, 03 and 06, so
-11 does nothing until you turn it. Patch 06 plays `scatter` in mode 4, the
-wave jumping about nine times a second while a key is held. The patch on the
-user palette (07) has `eight`, `four` and `hold`.
+sounds clearly unlike the last one, on every factory table. 30 of the 100
+factory patches are saved with a mode of 1 or more. For example, 02, 05 and 21
+step on each note, 03 and the bells 60 to 68 pick a step at random, and 75 steps in mode 4
+while a key is held. The user palette has `eight`, `four` and `hold`.
 
 The sequence chooses where a note starts, and the modulation above moves it
 from there. A strong scan (ENV3 or the LFO to the wave pointer) moves the wave
@@ -277,8 +327,9 @@ each step. The random LFO shape steps at the LFO rate too.
 ### The user area
 
 Waves 384 to 511 are 128 places for waves of your own. The factory disk puts
-32 waves there: Evolver single-cycle waves in places 384 to 415, played by
-patch 07's table, named evolver. The other 96 are empty (a flat line).
+32 waves there: Evolver single-cycle waves in places 384 to 415, named by the
+user palette's table, evolver. No factory patch uses that palette. The other
+96 are empty (a flat line).
 
 To put a wave of your own there you send it from a computer as a MIDI sample
 dump (section 12). Then you must save it, or the next boot loads the disk's
@@ -291,12 +342,15 @@ waves over it.
 3. If nothing has changed, 93 writes nothing and the display just shows the
    patch number.
 
-Only the changed waves are written. Each is read back and compared, and if one
-does not match the display shows Er, and that one and the ones after it are
-tried again at the next save (section 13).
+Only changed disk sectors are written, four waves per sector. Each is read
+back and compared with wave RAM. If one does not match, the display shows
+Er; that sector and later dirty sectors remain marked for the next action
+93 (section 13). The save keeps the RAM palette, patch and name while using
+sector RAM for its readback. It does not save patch edits or settings.
+Use the image booted for this session; see section 4 before changing it.
 
-A received wave is played only if a table names it. Patch 07's table, evolver,
-names 384 to 415, so a dump to sample numbers 0 to 31 replaces waves that
+A received wave is played only if a table names it. The user palette's table,
+evolver, names 384 to 415, so a dump to sample numbers 0 to 31 replaces waves that
 table plays, and a dump to 32 and up is stored but no factory table plays it.
 A MIDI editor can write a patch with a table that names them.
 
@@ -571,9 +625,11 @@ Eight voices on one key leaves none for chords, because every key uses its
 own voices. Unison is louder than a single voice, so see section 10.
 
 **Glide, 63**, slides the pitch to a new note. 0 is off, and 1 to 99 are
-slower, from an octave in 22 milliseconds to an octave in 33 seconds. In
-mono, glide happens on a legato slur. In poly, every note glides from the
-pitch its voice last played.
+slower, from an octave in 22 milliseconds to an octave in 33 seconds (50 is
+about 0.8 seconds, 70 about 3.4). In mono, glide happens on a legato slur. In
+poly, every note glides from the pitch its voice last played. Releases up to
+v1.2.0 had a fault here: glide 48 to 99 did not move the pitch at all, and
+lower values were slower than this. v1.2.1 fixes it.
 
 **Vintage, 26**, is described in section 6.
 
@@ -592,8 +648,8 @@ comes from and which control to turn.
 
 ### The level chain, in order
 
-1. **Amp level (75)** sets a voice's loudest level. Every factory patch uses
-   the same value, which the display shows as 75.
+1. **Amp level (75)** sets a voice's loudest level. Most factory patches use
+   the default, which the display shows as 75.
 2. **Velocity > amp (76)** lets how hard you play change that level. At 0 every
    key sounds at the level 75 sets. Raised, a softer key sounds quieter, and a
    full-force key stays at the level 75 sets. Velocity never makes a note
@@ -795,10 +851,21 @@ A computer can read and set every parameter by SysEx, dump and write the
 loaded patch, and select and save patches by number. [Phantasm Editor](../README.md#phantasm-editor), a separate project, is the editor for it. The protocol is in the [MIDI implementation](MIDI-IMPLEMENTATION.md); this firmware speaks SysEx protocol 4.0, which the discovery request reports, and an editor written for an earlier one cannot dump or write a patch to it. The Mirage
 only answers: it never sends anything by itself.
 
+Disable the computer or DAW's MIDI echo back to the Mirage. v1.2.1 ignores
+echoed discovery/value replies and BUSY, ACK and NAK, so those replies cannot
+sustain the NAK loop seen in TEST-055. The v1.2.0 image predates that fix;
+the original hardware route remains untested on v1.2.1. A reflected sector dump (`21`)
+still acts as a patch write, because that command works in both directions.
+
 A written patch goes to memory only. Nothing reaches the disk until a save,
-from the panel or by the editor, so an interrupted transfer cannot damage a
-patch. The display is not redrawn after a write to the loaded patch until you
-touch the panel.
+from the panel or by the editor, so an interrupted transfer cannot damage an
+on-disk patch. An accepted SysEx sector write (`21`) shows the selected
+parameter's value from the new patch within one panel sweep, without a
+keypress. It keeps the same parameter selected and does not select a patch
+number; a patch select (`22`) loads from disk and shows that number instead.
+If no parameter is selected, as at boot or after an invalid parameter number
+shows EE, a sector write leaves the display alone. A selected global (95-98)
+still shows its global value: those settings are not in the written patch.
 
 ### Sending your own waves
 
@@ -836,34 +903,98 @@ Do not send other SysEx while a dump runs: any other SysEx message ends it.
 | EE | A parameter number that does not exist |
 | E and a digit or letter | The disk could not be read or written. The character is the drive's last status; only the E carries a message |
 | EP | A save was refused because the disk is write protected |
-| EU | Action 93 was refused: the loaded disk has no user area |
-| Er | Action 93 wrote a wave and read it back different |
+| EU | Action 93 was refused: boot did not load a 512-wave pool |
+| Er | Action 93 wrote a sector and read it back different |
+
+### Before recovery
+
+**Reloading or restarting does not recover unsaved work.** Keep the same
+image selected and stop automatic MIDI program changes. Wait for the disk
+operation to return a result before attempting recovery. If it stays busy
+and completion is unknown, send no MIDI or save commands; a power cycle
+may be necessary and loses unsaved work. Do not remove the stick during an
+operation. These error-recovery steps are source-based and **unverified on
+hardware** for v1.2.0 and v1.2.1.
+
+If a MIDI echo loop is still producing traffic, remove the host/DAW echo
+route before another transfer. The #130 software guard does not establish
+that the disk operation completed or restore an unsaved sound. CC 123
+released TEST-055's recorded stuck note; send no MIDI while disk completion
+is unknown, as above.
+
+- **Patch RAM:** live parameter bytes are separate from the palette, stored
+  patch and name in sector RAM. Record the sound's values and intended patch
+  number before a load or power cycle. With an already validated MIDI setup,
+  protocol 4.0's current-patch dump can capture palette, patch and name
+  (section 12). After a failed patch-save readback, that dump is only salvage:
+  the palette or name may already be overwritten or incomplete. It is not
+  proof that the desired sound survived. Keep pre-save backups separately;
+  do not rely on an unqualified editor as the only backup.
+- **Globals:** record MIDI channel, omni, master tune and transpose (95-98).
+  They stay in separate RAM through patch loads and disk failures, but are
+  lost at power off unless saved. A patch dump excludes them. A patch save
+  may have written the patch while its settings save failed, so an error
+  does not establish that neither reached disk.
+- **User waves:** a patch load does not reload wave RAM; a reboot does.
+  Action 93 reads back into sector RAM and compares with wave RAM, leaving
+  the uploaded waves in RAM and keeping the patch's palette and name. There
+  is no firmware user-wave dump for exporting those RAM waves. Retain the
+  original host Sample Dump files; if a safe save cannot complete, unsaved
+  uploads cannot be promised recoverable after power off.
 
 ### What to do
 
-- **E and a character on a load.** The patch did not read. Try the load
-  again. If it fails again, try another patch number, then restart. The
-  instrument is playing a plain default sound, and **will refuse to save**
-  until a patch loads well, so a read error cannot overwrite a good patch.
-  A disk built for an earlier firmware does the same on every load: the
-  patch was 72 bytes before SysEx protocol 4.0 and is 96 now, a patch sector
-  from before is refused, and the disk has to be rebuilt.
-- **E and a character on a save.** The write or its read-back failed. The
-  patch may not be on the disk: load it again to see, and save again.
-- **EP.** The disk is write protected. Remove the write protection of the image or the stick, restart, and save
-  again.
-- **EU.** The disk was not made for the user area. It holds fewer than 512
-  waves, and the user waves are not saved. Use a disk built for 512.
-- **Er.** A user wave did not read back as written. That wave and the ones
-  after it are still marked as changed. Press PARAM 9 3 again. If it
-  persists, the disk or the drive is at fault.
-- **The patch number changed after a failed save-as.** A save-as that fails
-  on the disk (EP, or E and a character) still moves the displayed number to
-  the number you typed, though the patch may not be there. Load the patch you
-  meant to be on. A save-as refused after a failed load leaves the number
+- **E and a character on a load.** The load already replaced the patch's
+  palette with a fallback and cleared its table and sequence choices. The
+  previous complete sound cannot be recovered by saving that fallback; saves
+  are refused until a patch loads well. Record remaining values, globals and
+  user-wave needs first. Then retry the load or another known-good patch.
+  A restart discards remaining RAM work. Older incompatible patch sectors
+  must be rebuilt or converted on the host, not loaded repeatedly.
+- **E and a character on a patch save.** The write or its readback failed;
+  persistence of the target patch and changed settings is uncertain. A
+  readback uses the palette/name's sector RAM, including a temporary globals
+  readback, so do not assume a complete desired edit remains there. Record
+  values and retain any salvage dump as above before any reload or restart.
+  Do not blindly repeat Save: it could write damaged palette/name data.
+  After preserving what is available, back up the image with the Mirage off,
+  reboot a known-good compatible copy, and restore from a verified pre-save
+  backup or recreate the recorded edits. Only then save and check the result.
+- **EP.** A protected write was refused. At the initial patch-write refusal,
+  the complete RAM palette, edit and name remain; action 93's refusal also
+  leaves wave RAM and dirty flags intact. Keep the same image selected and
+  preserve the data above first. If protection can be removed without
+  restarting, changing images or removing an active stick, retry the same
+  operation: SEQ Save for a patch/settings, PARAM 9 3 for waves. Check the
+  destination number before confirming. Whether your Gotek can remove
+  protection safely in place is hardware-dependent and unverified. If it
+  requires a restart or stick removal, do not expect RAM work to survive;
+  use the power-off backup and restore procedure in section 4.
+- **EU.** Action 93 wrote nothing: the boot did not load a 512-wave pool,
+  perhaps because its read failed. Selecting another image cannot update
+  that cached decision. Record patch edits/settings and retain the uploaded
+  waves' host sources before power off. Back up the image, boot a known-good
+  compatible 512-wave image and resend the waves from those sources, then
+  use action 93. User waves left only in RAM are lost at reboot.
+- **Er, or E and a character during action 93.** Wave RAM and the RAM patch
+  remain; sectors not proven written stay dirty. With the same booted image
+  still selected and the operation finished, retry PARAM 9 3; it resumes
+  those sectors. Keep the source files and record patch/settings separately.
+  If it fails again, stop retrying and use the power-off backup procedure;
+  reload or restart does not rescue unsaved waves. A new disk must be booted
+  before uploads are resent and saved to it.
+- **The patch number changed after a failed save-as.** EP or a disk error
+  occurs after the displayed destination moves to the typed number, though
+  persistence is uncertain. Record that destination and preserve the work
+  before loading anything. A retry uses the chosen destination; check it
+  before Enter. A save-as refused after a failed load leaves the number
   where it was.
-- **A MIDI write did not show on the display.** It reached the sound. Touch
-  any panel key.
+- **A SysEx sector write did not show on the display.** An accepted `21`
+  redraws the selected parameter within one panel sweep. With no parameter
+  selected, the display stays as it was; select a parameter with PARAM and
+  its two digits to see its value. A selected global is unchanged by a patch
+  write. Check the editor's ACK/NAK result: unchanged digits do not prove a
+  write was accepted. A `21` changes RAM only; it does not confirm a disk save.
 - **Notes are silent.** Check parameter 95 and omni 96, 75 (amp level), and
   that a user-wave dump or a disk transfer is not still running.
 - **Nothing appears after boot.** Wait the full half-minute. If it still
@@ -872,6 +1003,7 @@ Do not send other SysEx while a dump runs: any other SysEx message ends it.
 
 ### Starting over
 
-Unsaved edits are lost on any load and at power off. Saved patches and saved
-user waves are on the disk. If the sound is wrong and you do not know why,
-load the patch again.
+Loading discards unsaved patch edits; power off also discards unsaved
+settings and user waves. A completed save puts only its own data on disk:
+patch/settings via SEQ Save, waves via action 93. Preserve wanted work and
+resolve errors as above before loading a patch again or starting over.

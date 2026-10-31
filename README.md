@@ -25,11 +25,13 @@ cannot harm the instrument.
 This repository is Phantasm's public home: the documentation, the editor, and
 the place to [report problems and give feedback](#feedback-and-support).
 
-> **Current version: 1.2.0** (2026-10-16). See the
+> **Current version: 1.2.1** (2026-10-31). See the
 > [release notes and downloads](https://github.com/laurielaptop/phantasm-os/releases/latest).
-> Chord mode passed on a real Mirage. The glitch sequences and the new wave
-> families are confirmed in the emulator and are still to be played on
-> hardware, so treat this release as a preview in those areas.
+> 100 new factory patches, designed on the instrument, and fixes for a loaded
+> patch's wave-sequence mode and glide. The release disk passed its listening
+> test on a real Mirage. The glitch sequences and the newer wave families have
+> not had hardware tests of their own, so treat this release as a preview in
+> those areas.
 
 ## Main features
 
@@ -41,8 +43,7 @@ the place to [report problems and give feedback](#feedback-and-support).
   key, the mod wheel and channel pressure.
 - **Per-keypress wave sequencing.** A sequence picks where each note starts in
   its table, in five modes: off, step, per voice, random and LFO. The factory
-  disk includes glitch sequences, and every factory patch responds to its
-  sequence.
+  disk includes glitch sequences, and 30 of its 100 patches play one.
 - **Chord keyboard mode.** Hold a chord, let go, and every key plays it.
 - **A 512-wave pool on the disk.** 256 factory waves in eight families
   (including the new `organ` and `digital` families, harmonics, voices, bells
@@ -140,8 +141,8 @@ and open <http://localhost:8000/phantasm-editor.html>.
 
 Edits made in the editor live in the instrument's memory until you save them
 to disk, and in the browser only until you close the page: export your work as
-`.syx` files to keep it. This editor release (v1.2.0) works with Phantasm 1.2.0 (SysEx
-protocol 4.0, schema 1.17). An instrument still on 1.1.0 connects read-only:
+`.syx` files to keep it. This editor (unchanged since v1.2.0) works with
+Phantasm 1.2.0 and 1.2.1 (SysEx protocol 4.0, schema 1.17). An instrument still on 1.1.0 connects read-only:
 update its disk image first. The editor refuses to edit any other
 incompatible version.
 

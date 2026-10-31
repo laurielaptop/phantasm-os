@@ -7,7 +7,7 @@
 
 # Phantasm MIDI implementation
 
-**Protocol 4.0, schema 1.17**, Phantasm v1.2.0.
+**Protocol 4.0, schema 1.17**, Phantasm v1.2.1.
 
 Everything Phantasm receives and sends over MIDI: control changes, the SysEx
 protocol used by [Phantasm Editor](../README.md#phantasm-editor), and the
@@ -121,6 +121,16 @@ A message not addressed to this device is ignored. A message cut short by an
 overrun or a framing error is abandoned without a reply (the #35 rule), and no
 note is released.
 
+Reply-only commands `02`, `12`, `7D` (BUSY), `7E` (ACK) and `7F` (NAK)
+received at the input are silently ignored, with any data length (#130).
+This prevents an echoed reply from generating another reply indefinitely.
+A genuine unknown request still receives NAK `07`. Command `21` is
+bidirectional: an incoming sector dump remains a write request and is
+validated/applied normally. Disable host/DAW echo back to the instrument;
+reply suppression does not make a reflected `21` harmless. This behaviour
+is covered in the emulator; the original hardware echo route has not been
+rechecked on v1.2.1.
+
 ## 4. Messages
 
 | Command | Direction | Data | Reply |
@@ -218,7 +228,17 @@ reserved bytes are summed in the checksum like the rest and then ignored
 (schema 1.3; 1.4 to 1.17 made `$3F` to `$50` live): they are stored, and dumped back, as zeros. A write that is
 accepted makes the RAM a good sector, so it may be saved even after a failed
 load, and the display follows it: the selected parameter's value from the
-written patch is on the display within one panel sweep (#91).
+written patch is on the display within one panel sweep (#91). The `21` keeps
+the parameter selection and current patch number; it does not act as a `22`
+select. With no parameter selected (`PANEL_ENTRY` is zero, as at boot or after
+an invalid parameter number shows EE), `PARAM_SHOW_CUR` leaves the display
+alone. If a global (95-98) is selected, its value is redrawn unchanged: the
+sector write does not contain globals. These exceptions mean unchanged digits
+are not evidence of acceptance; use the ACK/NAK result. The existing
+`sysex-display-check` observes parameter 70 after an accepted `21` and `10`
+without a keypress, including the first sweep after each edit; its negative
+restores the missing `21` redraw. That is emulator evidence, not a physical
+v1.2.0 display qualification.
 
 A write is an edit to the engine, as a `10` is: notes still sounding move to
 the written patch's parameter 12 at once, each on its own table and at its own

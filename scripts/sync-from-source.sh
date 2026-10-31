@@ -113,7 +113,7 @@ fi
 
 # Printable PDFs.
 cp "$phantasm/engine/build/phantasm-param-card.pdf" "$docs/"
-"${PYTHON:-python3}" "$here/scripts/render-public-manual.py" "$phantasm"
+PHANTASM_REF="$ref" "${PYTHON:-python3}" "$here/scripts/render-public-manual.py" "$phantasm"
 
 # Editor: rebuild the single-file standalone page.
 (cd "$editor" && npm run --silent build:standalone && npm run --silent test:standalone)

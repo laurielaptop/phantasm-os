@@ -2,7 +2,9 @@
 """Build the public manual from docs/MANUAL.md with a branded cover.
 
 Requires reportlab, pypdf, Node.js and sharp. PHANTASM_DIR (or argv[1])
-provides the upstream manual renderer; no upstream files are modified.
+provides the upstream manual renderer; no upstream files are modified. The
+cover's version is PHANTASM_REF (set by sync-from-source.sh), else the
+upstream's latest tag.
 """
 import io
 import os
@@ -18,6 +20,9 @@ from reportlab.lib.utils import ImageReader
 
 root = Path(__file__).resolve().parents[1]
 upstream = Path(sys.argv[1] if len(sys.argv) > 1 else os.environ.get('PHANTASM_DIR', root.parent / 'phantasm'))
+version = os.environ.get('PHANTASM_REF') or subprocess.run(
+    ['git', '-C', str(upstream), 'describe', '--tags', '--abbrev=0'],
+    check=True, capture_output=True, text=True).stdout.strip()
 source = (root / 'docs/MANUAL.md').read_text()
 # The upstream renderer accepts plain Markdown, without HTML or inline links.
 source = source[source.index('# Phantasm player'):]
@@ -41,7 +46,7 @@ with tempfile.TemporaryDirectory() as tmp:
     c.setFont('Helvetica-Bold', 24)
     c.drawCentredString(width/2, height-355, "Player's manual")
     c.setFont('Helvetica', 13)
-    c.drawCentredString(width/2, height-390, 'Phantasm v1.2.0 - Ensoniq Mirage')
+    c.drawCentredString(width/2, height-390, f'Phantasm {version} - Ensoniq Mirage')
     c.setFont('Helvetica', 10)
     c.drawCentredString(width/2, 110, 'Original documentation: CC BY 4.0. Brand artwork: all rights reserved.')
     c.drawCentredString(width/2, 94, 'See LICENSE.md and BRAND.md in the accompanying documentation.')
@@ -49,6 +54,6 @@ with tempfile.TemporaryDirectory() as tmp:
     writer = PdfWriter()
     writer.append(PdfReader(cover))
     writer.append(reader)
-    writer.add_metadata({'/Title': "Phantasm v1.2.0 - Player's manual", '/Author': 'laurielaptop'})
+    writer.add_metadata({'/Title': f"Phantasm {version} - Player's manual", '/Author': 'laurielaptop'})
     with (root / 'docs/phantasm-manual.pdf').open('wb') as output:
         writer.write(output)

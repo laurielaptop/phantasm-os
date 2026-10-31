@@ -1,6 +1,6 @@
 # Preparing public release files
 
-Run `sync-from-source.sh v1.2.0` with the private Phantasm and Phantasm Editor
+Run `sync-from-source.sh v1.2.1` with the private Phantasm and Phantasm Editor
 repositories checked out as siblings. Build the firmware parameter card at
 that tag first. The sync rebuilds the public manual from `docs/MANUAL.md`,
 adds the approved identity cover, and rebuilds and checks the standalone editor.
@@ -26,6 +26,6 @@ Review the draft, then publish it as Latest in GitHub. The README's
 `releases/latest/download/` links become public after publication.
 
 If you add or replace any attachment in the draft afterward, run
-`scripts/update-release-checksums.sh v1.2.0` with authenticated GitHub CLI
+`scripts/update-release-checksums.sh v1.2.1` with authenticated GitHub CLI
 before publishing. It downloads all draft assets and replaces `SHA256SUMS`.
 It refuses published releases and drafts without an `.hfe` image.

@@ -30,6 +30,22 @@ number on one page.
 A bad disk cannot harm the Mirage. The boot ROM is never touched, and
 Phantasm writes to the disk only when you save.
 
+**Change images with the Mirage off.** Waves, instrument settings and the
+user-wave save eligibility are loaded at boot. A patch load reads the newly
+selected image's patch/palette but keeps the old waves and settings; saves
+write the currently selected image. Action 93 does not recheck its layout.
+Finish operations and preserve patch edits/settings with SEQ Save and user
+waves separately with PARAM 9 3 on the original image. Keep host patch dumps
+and Sample Dump source files, then power off, back up the HFE on the computer,
+select the intended compatible image and boot it fully before loading or
+saving. A reboot loses remaining RAM edits, settings and uploaded waves.
+The complete procedure is in [manual section 4](MANUAL.md#changing-gotek-images)
+and is **unverified on hardware** for v1.2.0 and v1.2.1. Do not use live
+image swapping for transfers. Matching patch-sector versions do not guarantee
+matching sounds: v1.2.0 changes factory wave and noise content from v1.1, and
+v1.2.1 replaces all 100 factory patches. Keep the
+original image as well as individual patch backups.
+
 ## 2. The idea: waves, tables and a pointer
 
 A sampler plays a recording. Phantasm plays a **wave**: one cycle of a sound,
@@ -42,6 +58,7 @@ plays.
 *PH-ILLUS-005 v001 © 2026 laurielaptop. Used under the
 [Phantasm Media Internal Use Licence](assets/LICENSE.md); no reuse rights are
 granted outside the Phantasm Projects.*
+
 
 ![A wavetable and its pointer](diagrams/qs-wavetable.svg)
 
@@ -139,30 +156,61 @@ your edits away. **Loading another patch discards unsaved edits without
 asking.** Most parameters also respond to the MIDI controller with the same
 number (CC 70 moves the cutoff, for example).
 
+**After a save error, do not reload or restart to check it.** Keep the same
+image selected, stop automatic program changes and wait for the operation to
+finish. Record the destination, wanted values and settings 95-98 first.
+On EP (write protection), an initial refused write keeps the RAM data; remove
+protection in place only if your Gotek permits that safely, then retry the
+same operation without a restart. This hardware-dependent step is unverified.
+On another patch-save error, palette/name RAM and the disk result can be
+uncertain: a dump after the failure is salvage, not a complete backup. Do not
+blindly save it again. User-wave save errors keep wave RAM and dirty sectors,
+so action 93 can retry on the same booted image after the operation finishes;
+EU requires booting a compatible 512-wave image and resending host sources.
+There is no firmware wave-RAM export. A patch dump excludes waves and globals,
+and an unqualified editor must not be your only backup. If completion stays
+unknown, send no further MIDI or save commands. See
+[manual section 13](MANUAL.md#before-recovery) for each error and the
+power-off/backup/restore order; these recovery steps remain unverified on
+hardware. The TEST-055 panel-save anomaly is still under investigation (#129).
+
 ## 5. A tour of the factory patches
 
-Each factory patch shows off one feature. Load each one, play it, then try
-the suggested edit.
+The factory disk carries 100 patches, in groups of ten. Each name starts with
+its group. Patches 00 to 08 are a showcase, one from each group, and patch 09
+is a plain starting point to build on. Load a patch with LOAD Upper and Lower,
+or send program change 0 to 99.
 
-| Patch | Name | What to listen for | Try |
-|---|---|---|---|
-| 00 | Slow Scan | ENV3 sweeping the wave pointer through the harmonic table as you hold a note | `PARAM 8 0`, then raise the attack for a slower sweep |
-| 01 | LFO Scan | The LFO scanning the analog table, from sine to pulse and back | `PARAM 3 0` for the rate, `PARAM 1 7` for the depth |
-| 02 | Step Sequence | Each new key starts on the next wave of the vocal table | Play single notes slowly and listen to each one change |
-| 03 | Voice Sequence | The same sequence, stepped per voice | `PARAM 1 8`, `VALUE 0 3` for random |
-| 04 | Resonant Filter | A bell table through a self-oscillating filter. It whistles on purpose | `PARAM 7 1` and turn the resonance down |
-| 05 | Velocity Touch | Velocity moving the loudness, the cutoff and the starting wave together | Play soft and hard |
-| 06 | Lo-Fi Digital | The digital table, with little filtering, and the wave glitching about nine times a second on the `scatter` sequence | `PARAM 7 0` and close the cutoff; `VALUE 0 5` for `leap` |
-| 07 | Evolver Waves | The user area's sampled single cycles | `PARAM 1 2` and step through the table |
+| Patches | Group |
+|---|---|
+| 00-08 | The showcase: 00 BASS It's Yours, 01 PAD Lost Again, 02 LEAD Shellys, 03 KEYS Baker Light, 04 STRG Pulses, 05 BELL One Night, 06 SEQ Down We Go, 07 FX Thunderstruck, 08 STAB Together |
+| 09 | Init Patch, to build on |
+| 10-19 | BASS: basses |
+| 20-29 | PAD: pads |
+| 30-39 | LEAD: leads, all mono legato with glide |
+| 40-49 | KEYS: organs, pianos and plucks |
+| 50-59 | STNG: strings, brass and voices |
+| 60-69 | BELL: bells and mallets |
+| 70-79 | SEQ: wave sequences and movement |
+| 80-89 | FX: effects and noise |
+| 90-99 | STAB: stabs in chord mode, so one key plays a chord |
 
-Patches 08 to 99 start out as plain init patches to build on.
+Things to listen for:
+
+- **Wave sequences** (parameter 18). On 02, 05 and 21 each new note starts
+  on the next wave of the sequence. On 03 and most of the bells (60-68) each
+  note picks one at random. On 75, SEQ Looper, a held note steps through the
+  waves in time with the LFO.
+- **Glide.** Play the leads (30-39) legato: hold one key and press the next,
+  and the pitch slides between them.
+- **Chord mode** (parameter 60). Play single keys on 08 and on 90 to 99.
 
 ## 6. Six quick recipes
 
 Each recipe starts from a loaded patch. Save the result with **SEQ Save** and
 two digits, for example `2 0` for patch 20.
 
-**A slow wave sweep.** On patch 00, set `85` to 5 (ENV3 to the wave pointer)
+**A slow wave sweep.** On patch 09, set `85` to 5 (ENV3 to the wave pointer)
 and `12` to 0 (start at the first wave). Set `86` to 99 for a full sweep up
 the table, `80` to about 60 for a slow attack, and hold a chord. Set `86`
 below 50 and `12` to 99 to sweep the other way.
@@ -187,10 +235,10 @@ put.
 
 **A wave sequence.** Set `18` to 1 (step) and play single notes: each one
 starts on the next step of sequence `11`. Change `11` to try another
-sequence, and use `PARAM 9 4` to go back to step 0. Patches 00 to 07 already
-have a mode of 1 or more, so turning `11` is audible on any of them: 3 holds the
-first wave, and 4, 5 and 6 (`flip`, `leap`, `scatter`) jump between waves that
-sound clearly unlike each other. *Embrace the glitch!*
+sequence, and use `PARAM 9 4` to go back to step 0. Patches 02, 03 and 05,
+among others, already have a mode of 1 or more, so turning `11` is audible on
+them: 3 holds the first wave, and 4, 5 and 6 (`flip`, `leap`, `scatter`) jump
+between waves that sound clearly unlike each other. *Embrace the glitch!*
 
 ## 7. Keeping it clean
 
